@@ -1,0 +1,376 @@
+[debug] javaOptions: Vector(--add-opens=java.base/java.lang=ALL-UNNAMED, --add-opens=java.base/java.lang.invoke=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.base/sun.nio.ch=ALL-UNNAMED, --add-opens=java.base/java.util=ALL-UNNAMED, --add-opens=java.base/sun.util.calendar=ALL-UNNAMED, -Xmx2g)
+[debug] Forking tests - parallelism = false
+[debug] Create a single-thread test executor
+[debug] Runner for org.scalatest.tools.Framework produced 30 initial tasks for 30 tests.
+[debug]   Running TaskDef(smartagri.ml.CropStressModelSpec, sbt.ForkMain$SubclassFingerscan@23fe1d71, false, [SuiteSelector])
+[info] CropStressModelSpec:
+[info] - the approved feature list (reused unmodified from Task 4B) contains no target/future/evaluation/leakage fields
+[info] - future_stressed only ever contains 0 or 1 in a valid fixture
+[info] - sample_id is a stable, deterministic identity built from tile/cell_row/cell_col/date
+[info] - class weights are computed and both classes receive a positive weight
+[info] - the pipeline fits on a small fixture and produces predictions with the expected columns
+[info] - evaluate() computes all required metrics without throwing, on a small fitted-model fixture
+[info] - training twice with the same seed on the same data produces identical predictions
+[debug]     Produced 0 nested tasks and 7 events.
+[debug]   Running TaskDef(smartagri.features.FutureStressTargetAndSplitSpec, sbt.ForkMain$SubclassFingerscan@28ac3dc3, false, [SuiteSelector])
+[info] FutureStressTargetAndSplitSpec:
+[info] - future_anomaly = (future_ndvi - baseline_mean_ndvi) / baseline_std_ndvi, computed by hand
+[info] - future_anomaly is null (not Infinity/NaN) when baseline_std_ndvi is exactly 0.0
+[info] - future_stressed is 1 below the frozen threshold, 0 at/above it, and null when anomaly is null
+[info] - withMinimumHistory keeps only rows with baseline_observation_count >= 10
+[info] - chronologicalSplit correctly assigns train/test/straddling and excludes straddling from both
+[info] - a straddling row never appears in train or test output
+[info] - withFuturePairingOnly removes rows with no future observation, keeping canonical keys unique
+[debug]     Produced 0 nested tasks and 7 events.
+[debug]   Running TaskDef(smartagri.canonical.Era5NearestNeighborSpec, sbt.ForkMain$SubclassFingerscan@32eebfca, false, [SuiteSelector])
+[info] Era5NearestNeighborSpec:
+[info] - nearest selects the genuinely closest candidate
+[info] - nearest returns exactly the point itself when it's in the candidate set
+[info] - nearestWithDistance requires a non-empty candidate list
+[info] - an exact distance tie is broken by lowest latitude, then lowest longitude
+[info] - a latitude tie is broken by lowest longitude
+[info] - tie-breaking is deterministic across repeated calls with the same input
+[debug]     Produced 0 nested tasks and 6 events.
+[debug]   Running TaskDef(smartagri.mapreduce.NdviRecordParserSpec, sbt.ForkMain$SubclassFingerscan@4e718207, false, [SuiteSelector])
+[info] NdviRecordParserSpec:
+[info] - ExpectedFieldCount matches Task 2A's NdviFlatInputPreparation.ExportColumns length
+[info] - MissingNdviToken matches Task 2A's NdviFlatInputPreparation.MissingNdviToken
+[info] - classifyNdvi classifies an in-range value as VALID and preserves it
+[info] - classifyNdvi classifies the missing-value token as MISSING
+[info] - classifyNdvi classifies an out-of-range but parseable value as INVALID, preserving it
+[info] - classifyNdvi treats a genuinely non-numeric, non-token field as a parse failure (Left), not INVALID
+[info] - classifyNdvi treats the exact lower bound (-1.0) as VALID
+[info] - classifyNdvi treats the exact upper bound (1.0) as VALID
+[info] - classifyNdvi treats just-below the lower bound as INVALID, not VALID
+[info] - classifyNdvi treats just-above the upper bound as INVALID, not VALID
+[info] - parseLine rejects a line with too few fields as Malformed
+[info] - parseLine rejects a line with too many fields as Malformed
+[info] - parseLine rejects an empty tile field as Malformed
+[info] - parseLine rejects non-numeric cell_row/cell_col as Malformed
+[info] - parseLine rejects null as Malformed rather than throwing
+[info] - parseLine rejects a tile containing the reserved grouping-key separator ('|') as Malformed
+[info] - parseLine rejects an ambiguous/invalid date as Malformed
+[info] - parseLine correctly parses a well-formed valid-NDVI line
+[info] - parseLine correctly parses a well-formed missing-NDVI line
+[info] - groupingKey produces the exact 'tile|year_month' format
+[info] - groupingKey uses the same separator character exposed as GroupingKeySeparator
+[info] - yearMonthOf derives YYYY-MM from a CanonicalDate
+[debug]     Produced 0 nested tasks and 22 events.
+[debug]   Running TaskDef(smartagri.integration.StreamingKalmanPipelineSpec, sbt.ForkMain$SubclassFingerscan@1d371b2d, false, [SuiteSelector])
+[info] StreamingKalmanPipelineSpec:
+[info] - only soil_moisture readings are processed; air_temperature/soil_temperature readings for the same cell are excluded, not merged in
+[info] - two different cells' soil_moisture readings are processed as two independent Kalman tracks, not merged
+[info] - T1's state does not depend on T2/T3, and observations are sorted by event_time before processing, regardless of batch row order
+[info] - processBatch operates correctly on a small, explicitly bounded batch (simulating a real micro-batch)
+[debug]     Produced 0 nested tasks and 4 events.
+[debug]   Running TaskDef(smartagri.canonical.CanonicalHistoricalDatasetBuilderSpec, sbt.ForkMain$SubclassFingerscan@543c6f6d, false, [SuiteSelector])
+[info] CanonicalHistoricalDatasetBuilderSpec:
+[info] - canonical dataset has zero duplicate keys and row count equals deduplicated Sentinel row count
+[info] - canonical row count exactly equals deduplicated Sentinel row count (no join-induced explosion or loss)
+[info] - the canonical schema contains exactly the required columns, in the specified order
+[info] - validate() reports no failures against a correctly-built canonical dataset
+[debug]     Produced 0 nested tasks and 4 events.
+[debug]   Running TaskDef(smartagri.integration.StreamingKalmanAdapterSpec, sbt.ForkMain$SubclassFingerscan@13eb8acf, false, [SuiteSelector])
+[info] StreamingKalmanAdapterSpec:
+[info] - a single-cell sequence produces a deterministic Kalman result using the REAL Task 5 filter
+[info] - tile/cellRow/cellCol are preserved unchanged on every output row
+[info] - eventTime is preserved verbatim, never replaced by a wall-clock timestamp
+[info] - a missing observation gets a predict-only step: state carries forward, no update fields are populated
+[info] - observations are processed in the given (assumed pre-sorted) order, and later state reflects earlier history
+[info] - KalmanObservationInput and KalmanStreamOutput have no field capable of representing ground truth or sensor_health
+[info] - CompatibleSensorType is exactly soil_moisture, per the documented sensor-semantics scope
+[debug]     Produced 0 nested tasks and 7 events.
+[debug]   Running TaskDef(smartagri.kalman.AdaptiveKalmanFilterSpec, sbt.ForkMain$SubclassFingerscan@51c8530f, false, [SuiteSelector])
+[info] AdaptiveKalmanFilterSpec:
+[info] - predict advances P by processNoisePerDay * elapsedDays and leaves x unchanged
+[info] - predict with elapsedDays=0 leaves P unchanged (no time has passed)
+[info] - predict rejects a negative elapsedDays
+[info] - update matches a hand-calculated example exactly
+[info] - update rejects a non-positive measurement variance
+[info] - posterior variance is always non-negative, even with a very large measurement variance
+[info] - higher reliability produces lower measurement variance
+[info] - lower reliability produces higher measurement variance
+[info] - stepAdaptive with reliability=1.0 produces the identical measurement variance as stepStatic
+[info] - the same observation influences the posterior less under low reliability than under high reliability
+[info] - updateMultiSource with exactly one observation matches update() exactly
+[info] - updateMultiSource requires at least one observation
+[info] - fusing two simultaneous observations weights the more reliable (lower-variance) source more heavily
+[debug]     Produced 0 nested tasks and 13 events.
+[debug]   Running TaskDef(smartagri.mapreduce.NdviTileMonthAggregatorSpec, sbt.ForkMain$SubclassFingerscan@7403c468, false, [SuiteSelector])
+[info] NdviTileMonthAggregatorSpec:
+[info] - accumulating three valid observations produces correct count/sum-derived stats
+[info] - accumulating a mix of missing, invalid, and valid observations counts each bucket correctly
+[info] - invalid observations' values do not influence mean/min/max/stddev at all
+[info] - zero valid observations: mean/min/max/stddev are explicitly unavailable, never a silent 0.0
+[info] - empty group (no observations at all) does not throw and reports zero/unavailable throughout
+[info] - all-missing group: every count/stat field behaves like the zero-valid case
+[info] - accumulating a VALID observation at exactly the canonical lower bound (-1.0) counts as valid
+[info] - accumulating a VALID observation at exactly the canonical upper bound (1.0) counts as valid
+[info] - min/max correctly span the full range when both boundary values are present alongside a mid value
+[info] - stddev is None (not 0.0) when there is exactly one valid observation
+[info] - stddev matches a hand-computed value for a small known set of valid observations
+[info] - stddev is exactly 0.0 (not NaN, not negative) when all valid observations are identical
+[info] - qualityRate is validCount / observationCount
+[info] - qualityRate is 1.0 when every observation is valid
+[info] - qualityRate is 0.0 when no observation is valid
+[info] - toTabDelimitedFields produces exactly nine fields, in the specified order
+[info] - summary() itself enforces validCount + invalidCount + missingCount == observationCount
+[debug]     Produced 0 nested tasks and 17 events.
+[debug]   Running TaskDef(smartagri.streaming.IoTStructuredStreamingSpec, sbt.ForkMain$SubclassFingerscan@43738a82, false, [SuiteSelector])
+[info] IoTStructuredStreamingSpec:
+[info] - parseObservableReadings correctly parses a valid JSON payload into the expected columns
+[info] - a missing value (JSON null) remains null in the parsed DataFrame, never 0.0
+[info] - event_time is parsed into a real timestamp matching the original instant
+[info] - the parsed schema contains no ground-truth or sensor_health columns
+[info] - windowed aggregation computes correct count, average, and missing-value count
+[info] - malformed JSON is routed to the malformed stream, never treated as a valid reading
+[debug]     Produced 0 nested tasks and 6 events.
+[debug]   Running TaskDef(smartagri.kafka.KafkaSerializationSpec, sbt.ForkMain$SubclassFingerscan@c81cdd1, false, [SuiteSelector])
+[info] KafkaSerializationSpec:
+[info] - toJson followed by fromJson reconstructs the original reading exactly
+[info] - serialization and deserialization are both deterministic
+[info] - a missing value round-trips as None, never Some(0.0) or a parse error
+[info] - sensor identity and cell identity survive the round trip exactly
+[info] - eventTime survives the round trip as an exact string match, not just a parseable instant
+[info] - the serialized payload contains no ground-truth or sensor_health fields
+[info] - kafkaKey is deterministic and uses the documented tile:cellRow:cellCol:sensorType format
+[info] - fromJson throws a clear error on malformed input rather than silently producing a wrong record
+[debug]     Produced 0 nested tasks and 8 events.
+[debug]   Running TaskDef(smartagri.mapreduce.NdviFlatInputPreparationSpec, sbt.ForkMain$SubclassFingerscan@1fc2b765, false, [SuiteSelector])
+[info] NdviFlatInputPreparationSpec:
+[info] - validateSourceSchema does not throw when a DataFrame with all five required columns is passed
+[info] - validateSource counts rows, missing NDVI, invalid NDVI, and valid NDVI correctly
+[info] - validateSource reports zero missing/invalid when all NDVI values are valid
+[info] - validateSource uses the same canonical NDVI bounds as SentinelObservation (boundary values are valid)
+[info] - validateSourceSchema throws a descriptive error when a required column is missing
+[info] - buildExportRows preserves row count exactly (no filtering, no dropping)
+[info] - buildExportRows selects exactly the five intended columns, in order
+[info] - buildExportRows renders a missing NDVI as the deterministic MissingNdviToken, not blank or dropped
+[info] - buildExportRows preserves an out-of-range NDVI value verbatim rather than clipping or dropping it
+[info] - buildExportRows renders a valid NDVI as its plain numeric string
+[info] - buildExportRows is deterministic: running it twice on the same input yields the same rows
+[info] - run() writes a headerless, tab-delimited dataset whose row count matches the source, to a local path
+[info] - run() throws rather than silently succeeding if the source is missing a required column
+[debug]     Produced 0 nested tasks and 13 events.
+[debug]   Running TaskDef(smartagri.canonical.SoilGridsNodataRepairSpec, sbt.ForkMain$SubclassFingerscan@75881071, false, [SuiteSelector])
+[info] SoilGridsNodataRepairSpec:
+[info] - a row where all seven soil properties are exactly 0.0 is converted to null across all seven
+[info] - original row count is preserved exactly -- repair nulls values, never drops rows
+[info] - a row where only SOME properties are zero (not all seven) is left completely untouched
+[info] - a row with genuinely realistic (all non-zero) values is completely unaffected
+[info] - a mix of nodata and real rows: only the all-zero row is repaired, the real row is untouched
+[debug]     Produced 0 nested tasks and 5 events.
+[debug]   Running TaskDef(smartagri.spatial.GridCellSpec, sbt.ForkMain$SubclassFingerscan@2a70a3d8, false, [SuiteSelector])
+[info] GridCellSpec:
+[info] - a valid GridCell constructs successfully and exposes its fields
+[info] - GridCell.toString renders the stable tile:row:col identity
+[info] - an invalid GridCell (empty tile) throws via the primary constructor
+[info] - an invalid GridCell (negative row/col) throws via the primary constructor
+[info] - GridCell.validated returns Right for valid input, without throwing
+[info] - GridCell.validated returns Left with a message for invalid input, without throwing
+[info] - two GridCells with the same fields are equal and share a hash code (case-class equality)
+[info] - GridCell.Columns names are the canonical, non-abbreviated column names
+[info] - GridCell.asTuple round-trips into an equal GridCell
+[debug]     Produced 0 nested tasks and 9 events.
+[debug]   Running TaskDef(smartagri.iot.SensorSeriesGeneratorSpec, sbt.ForkMain$SubclassFingerscan@289d1c02, false, [SuiteSelector])
+[info] SensorSeriesGeneratorSpec:
+[info] - the same derived seed produces an identical series
+[info] - a different derived seed produces a different series
+[info] - all generated true and observed values stay within [lowerBound, upperBound] under normal (uncorrupted) generation
+[info] - a high-persistence series shows real autocorrelation: consecutive values are much closer than far-apart values
+[info] - increasing measurementNoiseStd alone (process noise held at 0) changes observed values without changing true values
+[info] - missing corruption produces None, never Some(0.0)
+[info] - outlier corruption produces a value that can legitimately exceed physical bounds, with metadata recorded
+[info] - bias corruption keeps the observed value within physical bounds (clipped), unlike outlier
+[info] - stale corruption repeats the previous observed value
+[debug]     Produced 0 nested tasks and 9 events.
+[debug]   Running TaskDef(smartagri.canonical.SentinelDeduplicationSpec, sbt.ForkMain$SubclassFingerscan@22eeefeb, false, [SuiteSelector])
+[info] SentinelDeduplicationSpec:
+[info] - an exact byte-identical duplicate is collapsed to a single row
+[info] - a table with no duplicates at all is returned unchanged
+[info] - deduplication produces zero remaining duplicate keys
+[info] - a duplicate key with CONFLICTING ndvi values aborts with IllegalStateException, never silently resolved
+[info] - a duplicate key with conflicting lat/lon (but same ndvi) also aborts
+[info] - verifyDuplicatesAreIdentical does not throw when there are no conflicts (including no duplicates at all)
+[debug]     Produced 0 nested tasks and 6 events.
+[debug]   Running TaskDef(smartagri.kalman.ReliabilityEstimatorSpec, sbt.ForkMain$SubclassFingerscan@17d0685f, false, [SuiteSelector])
+[info] ReliabilityEstimatorSpec:
+[info] - an NDVI value outside [-1, 1] immediately gets the reliability floor
+[info] - a value close to the prior mean gets high reliability
+[info] - a value far from the prior mean gets lower reliability than a value close to it
+[info] - with no prior history, reliability is neutral (1.0), not an arbitrary guess
+[info] - reliability never falls below minimumReliability or above 1.0, across a range of deviations
+[info] - reliabilityToMeasurementVariance is monotonically decreasing as reliability increases
+[info] - ReliabilityEstimator's API has no parameter for sensor_health or corruption metadata
+[debug]     Produced 0 nested tasks and 7 events.
+[debug]   Running TaskDef(smartagri.canonical.Era5SpatialAlignmentSpec, sbt.ForkMain$SubclassFingerscan@3891771e, false, [SuiteSelector])
+[info] Era5SpatialAlignmentSpec:
+[info] - each Sentinel row is attached to the nearest ERA5 point's weather value for the same date
+[info] - row count is preserved exactly through the ERA5 join -- no explosion, no loss
+[info] - a Sentinel date with no matching ERA5 date is reported as unmatched, not silently dropped
+[info] - a Sentinel row is never matched to an ERA5 observation from a different date, even if geographically closer
+[debug]     Produced 0 nested tasks and 4 events.
+[debug]   Running TaskDef(smartagri.features.FeatureEngineeringSpec, sbt.ForkMain$SubclassFingerscan@78ac1102, false, [SuiteSelector])
+[info] FeatureEngineeringSpec:
+[info] - future_date/future_ndvi correctly hold the NEXT chronological observation for the same cell
+[info] - the final observation of a cell has null future_date and future_ndvi
+[info] - ndvi_lag1 holds exactly the PREVIOUS observation's NDVI, and ndvi_change is the correct delta
+[info] - ndvi_rolling_mean at the 5th observation uses exactly the 4 prior values (0.10,0.20,0.30,0.40), never the current 0.50
+[info] - ndvi_rolling_mean never includes a future value: the 6th row's rolling window is entirely from rows 2-5
+[info] - days_since_prior_observation matches the actual calendar gap, null for the first observation
+[info] - baseline_mean_ndvi/std at the 4th observation use ONLY the 3 strictly-prior observations, never the current one
+[info] - baseline_observation_count grows by exactly 1 per observation and never counts the current or any future row
+[info] - baseline is frozen at T: appending a later observation does not change an earlier row's baseline
+[debug]     Produced 0 nested tasks and 9 events.
+[debug]   Running TaskDef(smartagri.model.CanonicalKeySpec, sbt.ForkMain$SubclassFingerscan@2de8284b, false, [SuiteSelector])
+[info] CanonicalKeySpec:
+[info] - canonical key generation from a GridCell and a CanonicalDate
+[info] - canonical key generation from raw strings/ints via the convenience constructor
+[info] - the convenience constructor throws on invalid components, same as the underlying types
+[info] - CanonicalKey.Columns.All is exactly the four canonical join columns, in order
+[info] - two CanonicalKeys built from equal components are equal
+[debug]     Produced 0 nested tasks and 5 events.
+[debug]   Running TaskDef(smartagri.kalman.KalmanFusionPipelineSpec, sbt.ForkMain$SubclassFingerscan@396e2f39, false, [SuiteSelector])
+[info] KalmanFusionPipelineSpec:
+[info] - runCellSequential processes observations in date order regardless of input order
+[info] - an earlier row's kalman_state is identical whether or not a later observation exists
+[info] - validateNoDuplicateKeys throws when the input has a duplicate (tile,cell_row,cell_col,date) key
+[info] - validateNoDuplicateKeys does not throw on a clean input
+[info] - an irregular gap between observations is reflected deterministically in elapsedDays-driven P growth
+[info] - running the same cell sequence twice produces byte-identical output
+[info] - static and adaptive modes are both individually deterministic across repeated runs
+[debug]     Produced 0 nested tasks and 7 events.
+[debug]   Running TaskDef(smartagri.validation.SchemaValidationSpec, sbt.ForkMain$SubclassFingerscan@a74868d, false, [SuiteSelector])
+[info] SchemaValidationSpec:
+[info] - validateGridCell accepts a valid cell
+[info] - validateGridCell reports every violation at once for an invalid cell
+[info] - validateDate accepts a valid ISO date
+[info] - validateDate rejects an invalid date without throwing
+[info] - validateNdvi treats a missing value (None) as valid, not an error
+[info] - validateNdvi accepts values within [-1, 1]
+[info] - validateNdvi rejects values outside [-1, 1] rather than clipping them
+[info] - validateIotReading accepts a fully valid reading
+[info] - validateIotReading rejects a reading with multiple problems and reports all of them
+[info] - validateCanonicalKey succeeds when both spatial and temporal components are valid
+[info] - validateCanonicalKey reports combined errors when both components are invalid
+[debug]     Produced 0 nested tasks and 11 events.
+[debug]   Running TaskDef(smartagri.iot.IotSimulatorPipelineSpec, sbt.ForkMain$SubclassFingerscan@12c8a2c0, false, [SuiteSelector])
+[info] IotSimulatorPipelineSpec:
+[info] - observable output preserves exactly the input cells' tile/cell_row/cell_col
+[info] - two different cells produce different observable value sequences
+[info] - the observable schema contains none of the forbidden ground-truth/corruption/health fields
+[info] - the ground-truth schema DOES contain true value, observed value, and corruption fields
+[info] - validateNoDuplicateEventKeys does not throw on normally-generated (always-unique) output
+[info] - validateNoDuplicateEventKeys throws when a duplicate (sensorId, eventTime) key is artificially introduced
+[info] - observable and ground-truth outputs survive a real Parquet write/read round trip
+[info] - generate() returns DataFrames backed by a real distributed plan, not a driver-side collection
+[debug]     Produced 0 nested tasks and 8 events.
+[debug]   Running TaskDef(smartagri.model.IotSensorReadingSpec, sbt.ForkMain$SubclassFingerscan@7e0e6aa2, false, [SuiteSelector])
+[info] IotSensorReadingSpec:
+[info] - a valid IoT reading constructs successfully
+[info] - canonicalDate is explicitly derived from event_time, and canonicalKey combines it with the cell
+[info] - an invalid IoT reading (bad spatial key) throws via the underlying GridCell constructor
+[info] - SensorHealth.parse accepts exactly the two approved values and rejects anything else
+[info] - SensorHealth.render is the inverse of SensorHealth.parse
+[info] - IotSensorReading.Columns.All matches the approved schema field order, spatial key expanded
+[debug]     Produced 0 nested tasks and 6 events.
+[debug]   Running TaskDef(smartagri.mapreduce.NdviObservationWritableSpec, sbt.ForkMain$SubclassFingerscan@365185bd, false, [SuiteSelector])
+[info] NdviObservationWritableSpec:
+[info] - a VALID observation survives a write/readFields round trip exactly
+[info] - a MISSING observation survives a write/readFields round trip exactly
+[info] - an INVALID observation survives a write/readFields round trip, including an out-of-range value
+[info] - write/readFields uses explicit primitive I/O, not Java serialization (no Serializable marker needed)
+[info] - the serialized form is a fixed, small size: exactly one byte (status) plus one double (8 bytes)
+[info] - readFields throws IOException immediately when the status byte is unrecognized (Task 2C hardening)
+[info] - NdviStatus.isKnown correctly distinguishes the three valid statuses from an arbitrary byte
+[info] - the no-arg constructor required by the Writable contract defaults to MISSING/0.0
+[info] - NdviStatus.name renders all three known statuses distinctly, for debugging/toString use
+[debug]     Produced 0 nested tasks and 9 events.
+[debug]   Running TaskDef(smartagri.features.FeatureQualityReportSpec, sbt.ForkMain$SubclassFingerscan@18bf3d14, false, [SuiteSelector])
+[info] FeatureQualityReportSpec:
+[info] - imputation statistics are computed only from the DataFrame passed in (simulating train-only usage)
+[info] - applyImputation fills nulls with the frozen statistic and leaves non-null values untouched
+[info] - a frozen imputation statistic is unaffected by any subsequently-seen test-only values
+[info] - withSoilAvailabilityFlag is 1 only when ALL seven soil columns are present
+[info] - running the same transformation twice on identical input yields identical schema, row count, and values after sorting
+[debug]     Produced 0 nested tasks and 5 events.
+[debug]   Running TaskDef(smartagri.canonical.GeoDistanceSpec, sbt.ForkMain$SubclassFingerscan@4fb64261, false, [SuiteSelector])
+[info] GeoDistanceSpec:
+[info] - distance from a point to itself is zero
+[info] - distance is symmetric
+[info] - one degree of latitude is approximately 111 km
+[info] - a known short distance is within a sane, hand-checkable range
+[debug]     Produced 0 nested tasks and 4 events.
+[debug]   Running TaskDef(smartagri.iot.EventTimeAndSchemaSpec, sbt.ForkMain$SubclassFingerscan@42607a4f, false, [SuiteSelector])
+[info] EventTimeAndSchemaSpec:
+[info] - generated event timestamps are all valid, parseable ISO-8601 instants
+[info] - regular sampling (jitter=0) produces exactly intervalSeconds between consecutive timestamps
+[info] - irregular sampling (jitter>0) produces non-uniform, but always positive, intervals
+[info] - event time generation is deterministic under a fixed seed
+[info] - sensorId is a deterministic function of cell identity and sensor type
+[info] - sensorId differs for different cells or sensor types
+[info] - toJson is deterministic and correctly represents a present value
+[info] - toJson represents a missing value as a genuine JSON null, never 0 or a string
+[info] - kafkaKey is a deterministic function of the reading's cell and sensor type
+[debug]     Produced 0 nested tasks and 9 events.
+[debug]   Running TaskDef(smartagri.kafka.KafkaConfigSpec, sbt.ForkMain$SubclassFingerscan@782663d3, false, [SuiteSelector])
+[info] KafkaConfigSpec:
+[info] - default config reuses AppConfig's bootstrap servers, matching kafka-compose.yml
+[info] - default config reuses AppConfig's existing IoT topic name, not a newly-invented one
+[info] - default config uses acks=all, the safe baseline Task 7 requires
+[info] - default config uses a small, non-aggressive retry count
+[info] - clientId and groupId are non-empty and distinct from each other
+[debug]     Produced 0 nested tasks and 5 events.
+[debug]   Running TaskDef(smartagri.time.CanonicalDateSpec, sbt.ForkMain$SubclassFingerscan@1990a65e, false, [SuiteSelector])
+[info] CanonicalDateSpec:
+[info] - a valid ISO-8601 date parses successfully and round-trips its string form
+[info] - CanonicalDate.parse returns Right for a valid date, without throwing
+[info] - an invalid/ambiguous date string is rejected, not silently coerced
+[info] - CanonicalDate.parse returns Left with a message for invalid input, without throwing
+[info] - CanonicalDate.ColumnName is the agreed-upon 'date' column name
+[info] - a valid IoT event_time parses successfully
+[info] - an invalid event_time string is rejected
+[info] - event_time derives its canonical date explicitly, never implicitly
+[info] - event_time near a UTC day boundary derives the correct UTC calendar date
+[info] - two CanonicalDates parsed from the same date string are equal and share a hash code
+[info] - two CanonicalDates for different dates are not equal
+[info] - a CanonicalDate is never equal to an unrelated type
+[info] - two IotEventTimes parsed from the same instant are equal and share a hash code
+[info] - two IotEventTimes for different instants are not equal
+[debug]     Produced 0 nested tasks and 14 events.
+[info] Run completed in 1 minute, 11 seconds.
+[info] Total number of tests run: 246
+[info] Suites: completed 30, aborted 0
+[info] Tests: succeeded 246, failed 0, canceled 0, ignored 0, pending 0
+[info] All tests passed.
+[debug] Passed tests:
+[debug] 	smartagri.ml.CropStressModelSpec
+[debug] 	smartagri.features.FutureStressTargetAndSplitSpec
+[debug] 	smartagri.canonical.Era5NearestNeighborSpec
+[debug] 	smartagri.mapreduce.NdviRecordParserSpec
+[debug] 	smartagri.integration.StreamingKalmanPipelineSpec
+[debug] 	smartagri.canonical.CanonicalHistoricalDatasetBuilderSpec
+[debug] 	smartagri.integration.StreamingKalmanAdapterSpec
+[debug] 	smartagri.kalman.AdaptiveKalmanFilterSpec
+[debug] 	smartagri.mapreduce.NdviTileMonthAggregatorSpec
+[debug] 	smartagri.streaming.IoTStructuredStreamingSpec
+[debug] 	smartagri.kafka.KafkaSerializationSpec
+[debug] 	smartagri.mapreduce.NdviFlatInputPreparationSpec
+[debug] 	smartagri.canonical.SoilGridsNodataRepairSpec
+[debug] 	smartagri.spatial.GridCellSpec
+[debug] 	smartagri.iot.SensorSeriesGeneratorSpec
+[debug] 	smartagri.canonical.SentinelDeduplicationSpec
+[debug] 	smartagri.kalman.ReliabilityEstimatorSpec
+[debug] 	smartagri.canonical.Era5SpatialAlignmentSpec
+[debug] 	smartagri.features.FeatureEngineeringSpec
+[debug] 	smartagri.model.CanonicalKeySpec
+[debug] 	smartagri.kalman.KalmanFusionPipelineSpec
+[debug] 	smartagri.validation.SchemaValidationSpec
+[debug] 	smartagri.iot.IotSimulatorPipelineSpec
+[debug] 	smartagri.model.IotSensorReadingSpec
+[debug] 	smartagri.mapreduce.NdviObservationWritableSpec
+[debug] 	smartagri.features.FeatureQualityReportSpec
+[debug] 	smartagri.canonical.GeoDistanceSpec
+[debug] 	smartagri.iot.EventTimeAndSchemaSpec
+[debug] 	smartagri.kafka.KafkaConfigSpec
+[debug] 	smartagri.time.CanonicalDateSpec

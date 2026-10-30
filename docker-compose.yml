@@ -1,0 +1,170 @@
+# Smart Agriculture Big Data cluster
+#
+#   HDFS : 1 NameNode + 5 DataNodes, replication factor 3 (hadoop.env)
+#   YARN : 1 ResourceManager + 2 NodeManagers + Timeline/History server
+#   Spark: client container that submits Spark 3.5 jobs to YARN (--master yarn)
+#   Kafka: single KRaft broker for the IoT stream
+#
+#   docker compose up -d
+#   NameNode UI        http://localhost:9870
+#   YARN RM UI         http://localhost:8088
+#   Spark job UI       http://localhost:4040   (while a job is running)
+#   Spark History UI   http://localhost:18080
+#
+# Daemon heaps are capped so the whole cluster fits in Docker Desktop's
+# default 16 GB WSL2 allocation.
+
+x-datanode: &datanode
+  image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+  restart: unless-stopped
+  env_file: ./hadoop.env
+  depends_on: [namenode]
+
+x-nodemanager: &nodemanager
+  image: bde2020/hadoop-nodemanager:2.0.0-hadoop3.2.1-java8
+  restart: unless-stopped
+  env_file: ./hadoop.env
+  depends_on: [resourcemanager]
+
+services:
+  namenode:
+    image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
+    container_name: namenode
+    hostname: namenode
+    restart: unless-stopped
+    ports: ["9870:9870", "9000:9000"]
+    volumes:
+      - hadoop_namenode:/hadoop/dfs/name
+      - ./data:/data:ro                      # raw downloads, copied into HDFS by scripts/hdfs_load_raw.sh
+      - ./scripts:/scripts:ro
+    environment:
+      CLUSTER_NAME: smart_agri
+      HADOOP_HEAPSIZE_MAX: 1g
+    env_file: ./hadoop.env
+
+  datanode1:
+    <<: *datanode
+    container_name: datanode1
+    hostname: datanode1
+    volumes: [hadoop_datanode1:/hadoop/dfs/data]
+    environment: {SERVICE_PRECONDITION: "namenode:9870", HADOOP_HEAPSIZE_MAX: 384m}
+  datanode2:
+    <<: *datanode
+    container_name: datanode2
+    hostname: datanode2
+    volumes: [hadoop_datanode2:/hadoop/dfs/data]
+    environment: {SERVICE_PRECONDITION: "namenode:9870", HADOOP_HEAPSIZE_MAX: 384m}
+  datanode3:
+    <<: *datanode
+    container_name: datanode3
+    hostname: datanode3
+    volumes: [hadoop_datanode3:/hadoop/dfs/data]
+    environment: {SERVICE_PRECONDITION: "namenode:9870", HADOOP_HEAPSIZE_MAX: 384m}
+  datanode4:
+    <<: *datanode
+    container_name: datanode4
+    hostname: datanode4
+    volumes: [hadoop_datanode4:/hadoop/dfs/data]
+    environment: {SERVICE_PRECONDITION: "namenode:9870", HADOOP_HEAPSIZE_MAX: 384m}
+  datanode5:
+    <<: *datanode
+    container_name: datanode5
+    hostname: datanode5
+    volumes: [hadoop_datanode5:/hadoop/dfs/data]
+    environment: {SERVICE_PRECONDITION: "namenode:9870", HADOOP_HEAPSIZE_MAX: 384m}
+
+  resourcemanager:
+    image: bde2020/hadoop-resourcemanager:2.0.0-hadoop3.2.1-java8
+    container_name: resourcemanager
+    hostname: resourcemanager
+    restart: unless-stopped
+    ports: ["8088:8088"]
+    volumes:
+      - ./scala-ingestion/target/scala-2.12:/jars:ro
+    environment:
+      SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode1:9864 datanode2:9864 datanode3:9864"
+      HADOOP_HEAPSIZE_MAX: 512m
+    env_file: ./hadoop.env
+
+  nodemanager1:
+    <<: *nodemanager
+    container_name: nodemanager1
+    hostname: nodemanager1
+    environment:
+      SERVICE_PRECONDITION: "namenode:9000 namenode:9870 resourcemanager:8088"
+      HADOOP_HEAPSIZE_MAX: 384m
+  nodemanager2:
+    <<: *nodemanager
+    container_name: nodemanager2
+    hostname: nodemanager2
+    environment:
+      SERVICE_PRECONDITION: "namenode:9000 namenode:9870 resourcemanager:8088"
+      HADOOP_HEAPSIZE_MAX: 384m
+
+  historyserver:
+    image: bde2020/hadoop-historyserver:2.0.0-hadoop3.2.1-java8
+    container_name: historyserver
+    hostname: historyserver
+    restart: unless-stopped
+    ports: ["8188:8188"]
+    volumes: [hadoop_historyserver:/hadoop/yarn/timeline]
+    environment:
+      SERVICE_PRECONDITION: "namenode:9000 namenode:9870 resourcemanager:8088"
+      HADOOP_HEAPSIZE_MAX: 256m
+    env_file: ./hadoop.env
+
+  # Spark 3.5 client: every Scala/Spark job is spark-submit'ed from here to YARN.
+  spark-client:
+    image: apache/spark:3.5.6
+    container_name: spark-client
+    hostname: spark-client
+    user: root
+    restart: unless-stopped
+    command: ["bash", "-c", "sleep infinity"]
+    ports: ["4040:4040", "18080:18080"]
+    environment:
+      HADOOP_CONF_DIR: /opt/hadoop-conf
+      YARN_CONF_DIR: /opt/hadoop-conf
+      SPARK_CONF_DIR: /opt/spark-conf
+    volumes:
+      - ./cluster/hadoop-conf:/opt/hadoop-conf:ro
+      - ./cluster/spark-conf:/opt/spark-conf:ro
+      - ./scala-ingestion/src:/src:ro             # read by smartagri.audit.LeakageAudit
+      - ./scala-ingestion/target/scala-2.12:/jars:ro
+      - ./scripts:/scripts:ro
+      - ./results:/results
+    depends_on: [namenode, resourcemanager]
+
+  kafka:
+    image: apache/kafka:3.8.0
+    container_name: kafka
+    hostname: kafka
+    restart: unless-stopped
+    ports: ["9092:9092"]
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: INTERNAL://0.0.0.0:29092,EXTERNAL://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka:29092,EXTERNAL://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_HEAP_OPTS: "-Xms256m -Xmx512m"
+
+volumes:
+  hadoop_namenode:
+  hadoop_datanode1:
+  hadoop_datanode2:
+  hadoop_datanode3:
+  hadoop_datanode4:
+  hadoop_datanode5:
+  hadoop_historyserver:
+
+networks:
+  default:
+    name: smartagri

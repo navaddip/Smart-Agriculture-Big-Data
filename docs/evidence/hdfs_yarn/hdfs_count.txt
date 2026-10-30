@@ -1,0 +1,4 @@
+        none             inf            none             inf            4           49             47.0 G /user/smart_agri/raw
+        none             inf            none             inf           65        1.7 K             99.7 M /user/smart_agri/processed
+        none             inf            none             inf           31           46              3.3 M /user/smart_agri/results
+        none             inf            none             inf           22          327              5.0 M /user/smart_agri/streaming

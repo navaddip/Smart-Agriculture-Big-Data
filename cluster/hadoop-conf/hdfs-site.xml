@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<configuration>
+  <property><name>dfs.replication</name><value>3</value></property>
+  <property><name>dfs.client.block.write.replace-datanode-on-failure.policy</name><value>NEVER</value></property>
+</configuration>

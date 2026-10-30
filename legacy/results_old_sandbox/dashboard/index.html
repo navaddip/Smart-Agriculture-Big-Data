@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Smart Agriculture -- Results Dashboard</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 1em; color: #222; }
+h1 { font-size: 1.5em; } h2 { font-size: 1.15em; border-bottom: 1px solid #ddd; padding-bottom: .3em; margin-top: 2em; }
+table { border-collapse: collapse; width: 100%; margin: .5em 0; }
+td, th { border: 1px solid #ddd; padding: .4em .6em; text-align: left; font-size: .92em; }
+th { background: #f5f5f5; }
+img { max-width: 100%; border: 1px solid #ddd; margin: .5em 0; }
+.note { color: #666; font-size: .85em; }
+</style></head><body>
+<h1>Smart Agriculture Big Data Project -- Results Dashboard</h1>
+<p class="note">Generated from real, persisted Spark/Scala run outputs. Sandbox-scale verification (see notes) -- not full-dataset production numbers.</p>
+
+<h2>1. Adaptive vs. Static Kalman Robustness</h2>
+<img src="kalman_robustness.png" alt="Kalman robustness">
+<table><tr><th>Scenario</th><th>Static RMSE</th><th>Adaptive RMSE</th><th>Delta</th></tr>
+<tr><td>clean</td><td>0.01194</td><td>0.01348</td><td>+0.00153</td></tr><tr><td>outlier_15pct</td><td>0.05973</td><td>0.01426</td><td>-0.04547</td></tr><tr><td>missing_20pct</td><td>0.01161</td><td>0.01274</td><td>+0.00114</td></tr><tr><td>bias_20pct</td><td>0.03517</td><td>0.02484</td><td>-0.01034</td></tr>
+</table>
+<p class="note">Negative delta = adaptive Kalman has lower error (better). Adaptive costs a small amount on clean/missing data but substantially reduces error under outlier and bias corruption.</p>
+
+<h2>2. Spark ML -- Crop Stress Prediction</h2>
+<table>
+<tr><th>Metric</th><th>Value</th></tr>
+<tr><td>accuracy</td><td>0.5136054421768708</td></tr><tr><td>precision_weighted</td><td>0.5073372206025266</td></tr><tr><td>recall_weighted</td><td>0.5136054421768708</td></tr><tr><td>f1</td><td>0.3865708312083312</td></tr><tr><td>roc_auc</td><td>0.5759273838744037</td></tr><tr><td>pr_auc</td><td>0.5808961756500794</td></tr><tr><td>confusion_actual0_pred0</td><td>144</td></tr><tr><td>confusion_actual0_pred1</td><td>7</td></tr><tr><td>confusion_actual1_pred0</td><td>136</td></tr><tr><td>confusion_actual1_pred1</td><td>7</td></tr><tr><td>positive_class_recall</td><td>0.04895104895104895</td></tr>
+</table>
+<p class="note">Run scope: 150 cells, 728 train / 294 test rows, numTrees=10, maxDepth=3 (documented code default: numTrees=100, maxDepth=8). reduced scale due to 1-CPU-core sandbox; full pipeline (19926 cells / 398027 rows) does not complete within one tool-call time budget</p>
+<img src="feature_importance.png" alt="Feature importance">
+
+<h2>3. Conformal Prediction</h2>
+<table><tr><th>alpha</th><th>qhat</th><th>Empirical coverage</th><th>Avg. set size</th><th>Ambiguous</th><th>Total</th></tr>
+<tr><td>0.1</td><td>0.7176</td><td>0.9490</td><td>1.7789</td><td>229</td><td>294</td></tr>
+</table>
+<p class="note">Split conformal, finite-sample-corrected quantile. Target coverage = 1-alpha = 0.90. Marginal coverage guarantee under exchangeability -- see ConformalPrediction.scala for the exact, documented method.</p>
+
+<h2>4. Decision Engine</h2>
+<img src="decision_counts.png" alt="Decision counts">
+<p class="note">Deterministic rule combining predicted probability and conformal ambiguity. Decision-support demonstration only, not an agronomic recommendation.</p>
+
+<h2>5. Streaming (IoT -&gt; Kalman) Fallback Demonstration</h2>
+<table>
+<tr><td>mode</td><td>local_fallback_no_live_kafka</td></tr><tr><td>observable_readings_generated</td><td>135</td></tr><tr><td>kalman_outputs_soil_moisture</td><td>45</td></tr><tr><td>present_observations</td><td>45</td></tr><tr><td>missing_observations</td><td>0</td></tr>
+</table>
+<p class="note">local_fallback_no_live_kafka: no live Kafka broker was available in this environment; the same ObservableReading schema and the same StreamingKalmanPipeline.processBatch logic that a live Kafka micro-batch would use were exercised against a locally generated batch instead.</p>
+
+</body></html>

@@ -1,0 +1,9 @@
+Configured Capacity: 5405505884160 (4.92 TB)
+DFS Used: 154629334664 (144.01 GB)
+Live datanodes (5):
+live DataNodes: 5
+Total Nodes:2
+         Node-Id	     Node-State	Node-Http-Address	Number-of-Running-Containers
+nodemanager1:43125	        RUNNING	nodemanager1:8042	                           0
+nodemanager2:37879	        RUNNING	nodemanager2:8042	                           0
+3

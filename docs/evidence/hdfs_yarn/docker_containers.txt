@@ -1,0 +1,13 @@
+NAMES             IMAGE                                                    STATUS
+spark-client      apache/spark:3.5.6                                       Up 34 minutes
+nodemanager1      bde2020/hadoop-nodemanager:2.0.0-hadoop3.2.1-java8       Up About an hour (healthy)
+nodemanager2      bde2020/hadoop-nodemanager:2.0.0-hadoop3.2.1-java8       Up About an hour (healthy)
+datanode2         bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8          Up About an hour (healthy)
+datanode4         bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8          Up About an hour (healthy)
+datanode3         bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8          Up About an hour (healthy)
+datanode5         bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8          Up About an hour (healthy)
+datanode1         bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8          Up About an hour (healthy)
+kafka             apache/kafka:3.8.0                                       Up About an hour
+resourcemanager   bde2020/hadoop-resourcemanager:2.0.0-hadoop3.2.1-java8   Up About an hour (healthy)
+namenode          bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8          Up About an hour (healthy)
+historyserver     bde2020/hadoop-historyserver:2.0.0-hadoop3.2.1-java8     Up About an hour (healthy)

@@ -1,0 +1,19 @@
+Total number of applications (application-types: [], states: [NEW, NEW_SAVING, SUBMITTED, ACCEPTED, RUNNING, FINISHED, FAILED, KILLED] and tags: []):17
+                Application-Id	    Application-Name	    Application-Type	      User	     Queue	             State	       Final-State	       Progress	                       Tracking-URL
+application_1790521642675_0008	      Era5Preprocess	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0009	 SoilGridsPreprocess	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0010	CanonicalHistoricalDatasetBuilder	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0011	NdviFlatInputPreparation	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0012	NdviTileMonthAggregation	           MAPREDUCE	      root	   default	          FINISHED	         SUCCEEDED	           100%	http://nodemanager1:19888/jobhistory/job/job_1790521642675_0012
+application_1790521642675_0013	FeaturePipelineBuilder	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0014	KalmanRobustnessExperiment	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0015	CropStressTrainEvaluate	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0001	 Sentinel2Preprocess	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0002	      Era5Preprocess	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0003	 SoilGridsPreprocess	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0004	 SoilGridsPreprocess	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0005	 CropHealthStreaming	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0006	 CropHealthStreaming	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0007	 Sentinel2Preprocess	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0016	 CropHealthStreaming	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0017	StreamingDetectionEvaluation	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A

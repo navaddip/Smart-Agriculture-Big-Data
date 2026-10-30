@@ -1,0 +1,41 @@
+[00] cluster_check: running ... (log: docs/evidence/00_cluster_check.log)
+[00] cluster_check: SUCCESS (5 s)
+[01] hdfs_raw_load: running ... (log: docs/evidence/01_hdfs_raw_load.log)
+[01] hdfs_raw_load: SUCCESS (65 s)
+[02] preprocess_sentinel2: running ... (log: docs/evidence/02_preprocess_sentinel2.log)
+[02] preprocess_sentinel2: SUCCESS (372 s)
+[03] preprocess_era5: running ... (log: docs/evidence/03_preprocess_era5.log)
+[03] preprocess_era5: SUCCESS (61 s)
+[04] preprocess_soilgrids: running ... (log: docs/evidence/04_preprocess_soilgrids.log)
+[04] preprocess_soilgrids: SUCCESS (49 s)
+[05] canonical_dataset: running ... (log: docs/evidence/05_canonical_dataset.log)
+[05] canonical_dataset: SUCCESS (71 s)
+[06] mapreduce_ndvi_tile_month: running ... (log: docs/evidence/06_mapreduce_ndvi_tile_month.log)
+[06] mapreduce_ndvi_tile_month: SUCCESS (89 s)
+[07] feature_pipeline: running ... (log: docs/evidence/07_feature_pipeline.log)
+[07] feature_pipeline: SUCCESS (114 s)
+[08] kalman_robustness: running ... (log: docs/evidence/08_kalman_robustness.log)
+[08] kalman_robustness: SUCCESS (67 s)
+[09] ml_train_evaluate: running ... (log: docs/evidence/09_ml_train_evaluate.log)
+[09] ml_train_evaluate: SUCCESS (75 s)
+[10] leakage_audit: running ... (log: docs/evidence/10_leakage_audit.log)
+[10] leakage_audit: SUCCESS (2 s)
+[11] streaming_kafka: running ... (log: docs/evidence/11_streaming_kafka.log)
+[11] streaming_kafka: SUCCESS (250 s)
+[12] hdfs_yarn_evidence: running ... (log: docs/evidence/12_hdfs_yarn_evidence.log)
+[12] hdfs_yarn_evidence: SUCCESS (23 s)
+
+================ PIPELINE SUMMARY ================
+  00 cluster_check SUCCESS 5s
+  01 hdfs_raw_load SUCCESS 65s
+  02 preprocess_sentinel2 SUCCESS 372s
+  03 preprocess_era5 SUCCESS 61s
+  04 preprocess_soilgrids SUCCESS 49s
+  05 canonical_dataset SUCCESS 71s
+  06 mapreduce_ndvi_tile_month SUCCESS 89s
+  07 feature_pipeline SUCCESS 114s
+  08 kalman_robustness SUCCESS 67s
+  09 ml_train_evaluate SUCCESS 75s
+  10 leakage_audit SUCCESS 2s
+  11 streaming_kafka SUCCESS 250s
+  12 hdfs_yarn_evidence SUCCESS 23s

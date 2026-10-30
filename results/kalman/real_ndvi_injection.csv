@@ -1,0 +1,5 @@
+scenario,n_series,static_rmse,adaptive_rmse,delta,delta_ci95,improvement_pct,adaptive_win_rate,verdict,data
+bias_20pct,5000,0.05266699174014806,0.05500013893961356,0.0023331471994657432,2.4540532556984135E-4,-4.429998984899193,0.4228,adaptive significantly WORSE,real Sentinel-2 NDVI series (HDFS canonical)
+clean,5000,0.016037127576004784,0.032217182231551275,0.016180054655546568,2.182196889153681E-4,-100.89122618040128,0.0,adaptive significantly WORSE,real Sentinel-2 NDVI series (HDFS canonical)
+missing_20pct,5000,0.02958294363594206,0.040229560464057984,0.0106466168281158,2.457130107066508E-4,-35.989038004929036,0.0522,adaptive significantly WORSE,real Sentinel-2 NDVI series (HDFS canonical)
+outlier_15pct,5000,0.1225832191564161,0.07999090774998298,-0.0425923114064335,7.221035362038517E-4,34.745629703267426,0.9334,adaptive significantly better,real Sentinel-2 NDVI series (HDFS canonical)

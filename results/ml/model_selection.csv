@@ -1,0 +1,6 @@
+model,hyperparameters,validation_roc_auc,validation_date
+gradient_boosting,maxDepth=3 maxIter=40,0.893580927717329,2024-03-18
+gradient_boosting,maxDepth=3 maxIter=80,0.8900362191033084,2024-03-18
+random_forest_enhanced,numTrees=100 maxDepth=8,0.8809648082294359,2024-03-18
+gradient_boosting,maxDepth=5 maxIter=40,0.874373396657718,2024-03-18
+gradient_boosting,maxDepth=5 maxIter=80,0.8676924486426726,2024-03-18

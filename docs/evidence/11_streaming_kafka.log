@@ -1,0 +1,114 @@
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Topic: iot_sensor_readings	TopicId: BIfJUBMhTVqyc-W9pZtbOA	PartitionCount: 6	ReplicationFactor: 1	Configs: 
+	Topic: iot_sensor_readings	Partition: 0	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: iot_sensor_readings	Partition: 1	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: iot_sensor_readings	Partition: 2	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: iot_sensor_readings	Partition: 3	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: iot_sensor_readings	Partition: 4	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: iot_sensor_readings	Partition: 5	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+Topic: crop_alerts	TopicId: z5xHr_jcS0iDRzHal5GFiQ	PartitionCount: 3	ReplicationFactor: 1	Configs: 
+	Topic: crop_alerts	Partition: 0	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: crop_alerts	Partition: 1	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: crop_alerts	Partition: 2	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+16:03:47.242 [main] WARN  org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:04:02.043 [main] WARN  org.apache.spark.sql.catalyst.analysis.HintErrorLogger - A join hint (strategy=broadcast) is specified but it is not part of a join relation.
+16:04:02.539 [main] WARN  org.apache.spark.sql.catalyst.analysis.HintErrorLogger - A join hint (strategy=broadcast) is specified but it is not part of a join relation.
+Static field context rows: 19916
+16:04:07.046 [main] WARN  org.apache.spark.sql.execution.streaming.ResolveWriteToStream - spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+Simulating 200 fields x 5 sensors -> Kafka kafka:29092 topic 'iot_sensor_readings' for 110 s
+  normal: 141 fields
+  drying_soil: 33 fields
+  humid_microclimate: 26 fields
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+16:04:44.341 [stream execution thread for crop_health [id = 662fc4c5-df98-4ae4-94b7-fb7fff8d747b, runId = 3f82deeb-cfef-4f20-a624-5cf920e9718d]] WARN  org.apache.spark.sql.catalyst.util.SparkStringUtils - Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+  2026-09-27T16:04:45.019Z sent=14000
+[batch 1] readings=8000 fields=199 outliers_downweighted=334 alerts{HIGH=52, LOW=121, MODERATE=26}
+[batch 2] readings=10000 fields=199 outliers_downweighted=467 alerts{HIGH=55, LOW=130, MODERATE=14}
+  2026-09-27T16:05:00.021Z sent=29000
+[batch 3] readings=10000 fields=199 outliers_downweighted=448 alerts{HIGH=57, LOW=129, MODERATE=13}
++------+--------+--------+-----------+----------------------------------------------------------------+
+|  tile|cell_row|cell_col|alert_level|                                                         reasons|
++------+--------+--------+-----------+----------------------------------------------------------------+
+|T43PGQ|      67|      92|       HIGH|                       soil moisture below 50% of field capacity|
+|T43PGQ|      14|      85|       HIGH|                       soil moisture below 50% of field capacity|
+|T43PGQ|      20|      93|       HIGH|                       soil moisture below 50% of field capacity|
+|T43PGQ|      62|      81|       HIGH|humidity>=90% + wet leaves + 15-30C: fungal infection conditions|
+|T43PGQ|      84|      77|       HIGH|                       soil moisture below 50% of field capacity|
++------+--------+--------+-----------+----------------------------------------------------------------+
+only showing top 5 rows
+
+[batch 4] readings=10000 fields=199 outliers_downweighted=433 alerts{HIGH=56, LOW=129, MODERATE=14}
+  2026-09-27T16:05:15.019Z sent=44000
+[batch 5] readings=10000 fields=199 outliers_downweighted=455 alerts{HIGH=57, LOW=131, MODERATE=11}
+  2026-09-27T16:05:30.021Z sent=59000
+[batch 6] readings=10000 fields=199 outliers_downweighted=409 alerts{HIGH=58, LOW=131, MODERATE=10}
++------+--------+--------+-----------+-----------------------------------------+
+|  tile|cell_row|cell_col|alert_level|                                  reasons|
++------+--------+--------+-----------+-----------------------------------------+
+|T43PGQ|      25|      98|       HIGH|soil moisture below 50% of field capacity|
+|T43PGQ|      20|      93|       HIGH|soil moisture below 50% of field capacity|
+|T43PGQ|      14|      85|       HIGH|soil moisture below 50% of field capacity|
+|T43PGQ|      30|      90|       HIGH|soil moisture below 50% of field capacity|
+|T43PGQ|      72|       5|       HIGH|soil moisture below 50% of field capacity|
++------+--------+--------+-----------+-----------------------------------------+
+only showing top 5 rows
+
+[batch 7] readings=10000 fields=199 outliers_downweighted=421 alerts{HIGH=58, LOW=133, MODERATE=8}
+  2026-09-27T16:05:45.018Z sent=74000
+[batch 8] readings=10000 fields=199 outliers_downweighted=371 alerts{HIGH=58, LOW=133, MODERATE=8}
+  2026-09-27T16:06:00.020Z sent=89000
+[batch 9] readings=10000 fields=199 outliers_downweighted=361 alerts{HIGH=58, LOW=132, MODERATE=9}
++------+--------+--------+-----------+----------------------------------------------------------------+
+|  tile|cell_row|cell_col|alert_level|                                                         reasons|
++------+--------+--------+-----------+----------------------------------------------------------------+
+|T43PGQ|      25|      98|       HIGH|                       soil moisture below 50% of field capacity|
+|T43PGQ|      37|      20|       HIGH|humidity>=90% + wet leaves + 15-30C: fungal infection conditions|
+|T43PGQ|      35|      19|       HIGH|                       soil moisture below 50% of field capacity|
+|T43PHQ|      21|      62|       HIGH|                       soil moisture below 50% of field capacity|
+|T43PGQ|      20|      93|       HIGH|                       soil moisture below 50% of field capacity|
++------+--------+--------+-----------+----------------------------------------------------------------+
+only showing top 5 rows
+
+[batch 10] readings=10000 fields=199 outliers_downweighted=419 alerts{HIGH=58, LOW=133, MODERATE=8}
+  2026-09-27T16:06:15.019Z sent=104000
+[batch 11] readings=10000 fields=199 outliers_downweighted=409 alerts{HIGH=58, LOW=133, MODERATE=8}
+Done: 110000 readings published to 'iot_sensor_readings'
+[batch 12] readings=2000 fields=199 outliers_downweighted=85 alerts{HIGH=58, LOW=134, MODERATE=7}
++------+--------+--------+-----------+----------------------------------------------------------------+
+|  tile|cell_row|cell_col|alert_level|                                                         reasons|
++------+--------+--------+-----------+----------------------------------------------------------------+
+|T43PGQ|      33|      12|       HIGH|                       soil moisture below 50% of field capacity|
+|T43PHQ|      37|      72|       HIGH|humidity>=90% + wet leaves + 15-30C: fungal infection conditions|
+|T43PHQ|      21|      62|       HIGH|                       soil moisture below 50% of field capacity|
+|T43PHQ|      16|      75|       HIGH|humidity>=90% + wet leaves + 15-30C: fungal infection conditions|
+|T43PGQ|      71|      44|       HIGH|humidity>=90% + wet leaves + 15-30C: fungal infection conditions|
++------+--------+--------+-----------+----------------------------------------------------------------+
+only showing top 5 rows
+
+Last progress: inputRows/s=0.0 processedRows/s=0.0
+16:06:59.537 [main] WARN  org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
++------------------+------+----------------------+------------------+------+-----------------------+
+|condition         |fields|fields_with_high_alert|correctly_detected|rate  |meaning                |
++------------------+------+----------------------+------------------+------+-----------------------+
+|drying_soil       |33    |32                    |32                |0.9697|detection rate (recall)|
+|humid_microclimate|26    |26                    |26                |1.0   |detection rate (recall)|
+|normal            |141   |0                     |0                 |0.0   |false-alarm rate       |
++------------------+------+----------------------+------------------+------+-----------------------+
+
+[report] detection_evaluation -> hdfs://namenode:9000/user/smart_agri/results/streaming/detection_evaluation (3 rows) + results/streaming/detection_evaluation.csv
+--- sample of alerts delivered on Kafka topic crop_alerts ---
+{"tile":"T43PGQ","cell_row":79,"cell_col":91,"window_end":"2026-09-27T15:43:39.356Z","alert_level":"HIGH","fungal_disease_risk":"LOW","water_stress_risk":"HIGH","reasons":"soil moisture below 50% of field capacity","air_humidity":38.7,"leaf_wetness":0.11,"air_temperature":27.0,"soil_moisture":0.075,"suppressed_outliers":3,"dropped_readings":1}
+{"tile":"T43PHQ","cell_row":33,"cell_col":95,"window_end":"2026-09-27T15:43:39.356Z","alert_level":"HIGH","fungal_disease_risk":"HIGH","water_stress_risk":"LOW","reasons":"humidity>=90% + wet leaves + 15-30C: fungal infection conditions","air_humidity":93.1,"leaf_wetness":0.86,"air_temperature":22.3,"soil_moisture":0.231,"texture_class":"unknown","suppressed_outliers":0,"dropped_readings":0}
+{"tile":"T43PGQ","cell_row":25,"cell_col":98,"window_end":"2026-09-27T15:43:39.356Z","alert_level":"HIGH","fungal_disease_risk":"LOW","water_stress_risk":"HIGH","reasons":"soil moisture below 50% of field capacity","air_humidity":40.9,"leaf_wetness":0.01,"air_temperature":28.3,"soil_moisture":0.071,"suppressed_outliers":2,"dropped_readings":0}
+{"tile":"T43PHQ","cell_row":16,"cell_col":7,"window_end":"2026-09-27T15:43:39.356Z","alert_level":"HIGH","fungal_disease_risk":"HIGH","water_stress_risk":"LOW","reasons":"humidity>=90% + wet leaves + 15-30C: fungal infection conditions","air_humidity":95.1,"leaf_wetness":0.64,"air_temperature":23.4,"soil_moisture":0.249,"texture_class":"sandy clay loam","suppressed_outliers":0,"dropped_readings":1}
+{"tile":"T43PHQ","cell_row":74,"cell_col":25,"window_end":"2026-09-27T15:43:39.356Z","alert_level":"HIGH","fungal_disease_risk":"HIGH","water_stress_risk":"LOW","reasons":"humidity>=90% + wet leaves + 15-30C: fungal infection conditions","air_humidity":93.0,"leaf_wetness":0.67,"air_temperature":22.5,"soil_moisture":0.247,"texture_class":"unknown","suppressed_outliers":0,"dropped_readings":0}
+{"tile":"T43PGQ","cell_row":35,"cell_col":30,"window_end":"2026-09-27T15:43:39.356Z","alert_level":"HIGH","fungal_disease_risk":"LOW","water_stress_risk":"HIGH","reasons":"soil moisture below 50% of field capacity","air_humidity":34.4,"leaf_wetness":0.04,"air_temperature":27.2,"soil_moisture":0.062,"suppressed_outliers":1,"dropped_readings":1}
+{"tile":"T43PGQ","cell_row":62,"cell_col":81,"window_end":"2026-09-27T15:43:39.356Z","alert_level":"MODERATE","fungal_disease_risk":"MODERATE","water_stress_risk":"LOW","reasons":"humid, leaves damp: fungal risk building","air_humidity":90.8,"leaf_wetness":0.73,"air_temperature":32.5,"soil_moisture":0.291,"suppressed_outliers":2,"dropped_readings":0}
+{"tile":"T43PHQ","cell_row":18,"cell_col":6,"window_end":"2026-09-27T15:43:39.356Z","alert_level":"MODERATE","fungal_disease_risk":"LOW","water_stress_risk":"MODERATE","reasons":"soil drying","air_humidity":66.7,"leaf_wetness":0.24,"air_temperature":26.7,"soil_moisture":0.215,"texture_class":"sandy clay loam","suppressed_outliers":0,"dropped_readings":1}
+Processed a total of 8 messages
+crop_alerts:0:351
+crop_alerts:1:265
+crop_alerts:2:370

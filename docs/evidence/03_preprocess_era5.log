@@ -1,0 +1,58 @@
+15:54:42.676 [main] WARN  org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ERA5 payloads: era5.zip!data_stream-oper_stepType-instant.nc, era5.zip!data_stream-oper_stepType-accum.nc
+  era5.zip!data_stream-oper_stepType-instant.nc                u10    365x9x9  (m s**-1)
+  era5.zip!data_stream-oper_stepType-instant.nc                v10    365x9x9  (m s**-1)
+  era5.zip!data_stream-oper_stepType-instant.nc                d2m    365x9x9  (K)
+  era5.zip!data_stream-oper_stepType-instant.nc                t2m    365x9x9  (K)
+  era5.zip!data_stream-oper_stepType-instant.nc                swvl1  365x9x9  (m**3 m**-3)
+  era5.zip!data_stream-oper_stepType-instant.nc                swvl2  365x9x9  (m**3 m**-3)
+  era5.zip!data_stream-oper_stepType-instant.nc                swvl3  365x9x9  (m**3 m**-3)
+  era5.zip!data_stream-oper_stepType-instant.nc                swvl4  365x9x9  (m**3 m**-3)
+  era5.zip!data_stream-oper_stepType-accum.nc                  tp     365x9x9  (m)
+  era5.zip!data_stream-oper_stepType-accum.nc                  e      365x9x9  (m of water equivalent)
+  era5.zip!data_stream-oper_stepType-accum.nc                  pev    365x9x9  (m)
+  era5.zip!data_stream-oper_stepType-accum.nc                  ssrd   365x9x9  (J m**-2)
+[time] NetCDF decode: 0.3 s
+15:55:21.233 [main] WARN  org.apache.spark.sql.catalyst.util.SparkStringUtils - Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+15:55:22.578 [dispatcher-CoarseGrainedScheduler] WARN  org.apache.spark.scheduler.TaskSetManager - Stage 0 contains a task of very large size (3896 KiB). The maximum recommended task size is 1000 KiB.
+[time] write era5_weather.parquet: 8.5 s
++----------+----------+-------------+----------+-----------+------------------------+
+|first_date|last_date |days_expected|daily_rows|grid_points|total_missing_point_days|
++----------+----------+-------------+----------+-----------+------------------------+
+|2023-01-01|2023-12-31|365          |29565     |81         |0                       |
++----------+----------+-------------+----------+-----------+------------------------+
+
+15:55:34.789 [dispatcher-CoarseGrainedScheduler] WARN  org.apache.spark.scheduler.TaskSetManager - Stage 92 contains a task of very large size (3896 KiB). The maximum recommended task size is 1000 KiB.
++--------+-------+-------+---------------------+----------------------+----------+----------+
+|variable|records|missing|out_of_range_set_null|negative_accum_clipped|min_raw   |max_raw   |
++--------+-------+-------+---------------------+----------------------+----------+----------+
+|d2m     |29565  |0      |0                    |0                     |269.669189|298.044556|
+|e       |29565  |0      |0                    |0                     |-2.95E-4  |-1.1E-5   |
+|pev     |29565  |0      |0                    |0                     |-7.21E-4  |-9.0E-6   |
+|ssrd    |29565  |0      |0                    |0                     |30656.0   |1245696.0 |
+|swvl1   |29565  |0      |0                    |0                     |0.095698  |0.519436  |
+|swvl2   |29565  |0      |0                    |0                     |0.120294  |0.5117    |
+|swvl3   |29565  |0      |0                    |0                     |0.112234  |0.488036  |
+|swvl4   |29565  |0      |0                    |0                     |0.176422  |0.472122  |
+|t2m     |29565  |0      |0                    |0                     |293.114258|312.172119|
+|tp      |29565  |0      |0                    |0                     |0.0       |0.011211  |
+|u10     |29565  |0      |0                    |0                     |-5.727356 |7.944183  |
+|v10     |29565  |0      |0                    |0                     |-4.751053 |4.115234  |
++--------+-------+-------+---------------------+----------------------+----------+----------+
+
++----------+-----+-----+------+------+-------+-------------+------+-------------------+
+|      date|  lat|  lon| t2m_c|rh_pct|vpd_kpa|wind_speed_ms| tp_mm|              swvl1|
++----------+-----+-----+------+------+-------+-------------+------+-------------------+
+|2023-04-30|12.75| 78.0|30.308|52.893| 2.0343|       4.2769|0.0043|0.17644387483596802|
+|2023-04-25| 12.0|77.25|28.712|59.301| 1.6033|       1.7368|1.5259|0.28832125663757324|
+|2023-03-13| 13.0|76.75|31.346|30.597|   3.18|       2.6974|   0.0|0.11992049217224121|
+|2023-09-08| 13.5|77.25|27.453|62.715|  1.365|        4.587|0.1259|0.22364163398742676|
+|2023-07-02|12.25| 77.0|27.078|69.798| 1.0818|       5.0199|0.8273|0.29546505212783813|
++----------+-----+-----+------+------+-------+-------------+------+-------------------+
+only showing top 5 rows
+
+15:55:37.794 [dispatcher-CoarseGrainedScheduler] WARN  org.apache.spark.scheduler.TaskSetManager - Stage 107 contains a task of very large size (3896 KiB). The maximum recommended task size is 1000 KiB.
+15:55:39.805 [dispatcher-CoarseGrainedScheduler] WARN  org.apache.spark.scheduler.TaskSetManager - Stage 126 contains a task of very large size (3896 KiB). The maximum recommended task size is 1000 KiB.
+[report] era5_quality -> hdfs://namenode:9000/user/smart_agri/processed/_reports/era5_quality (12 rows) + results/preprocessing/era5_quality.csv
+[report] era5_summary -> hdfs://namenode:9000/user/smart_agri/processed/_reports/era5_summary (1 rows) + results/preprocessing/era5_summary.csv
+Wrote 29565 daily grid-point rows -> hdfs://namenode:9000/user/smart_agri/processed/era5_weather.parquet

@@ -1,0 +1,107 @@
+04:36:27.079 [main] WARN  org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+04:37:03.131 [main] WARN  org.apache.spark.sql.catalyst.util.SparkStringUtils - Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+Rows with a null feature (dropped, reported): 0
+FIT=66363 (dates < 2024-03-23)  CALIBRATION=39485  TEST=48747
++-----------+-----+--------+------------+------------------+
+|partition  |dates|stressed|not_stressed|stressed_rate     |
++-----------+-----+--------+------------+------------------+
+|fit        |4    |46134   |20229       |0.6951765290900049|
+|calibration|2    |16893   |22592       |0.4278333544383943|
+|test       |3    |17595   |31152       |0.3609452889408579|
++-----------+-----+--------+------------+------------------+
+
+04:37:18.722 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 1042.2 KiB
+04:37:19.340 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 1897.0 KiB
+04:37:20.216 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 3.4 MiB
+[time] RandomForest fit (100 trees, depth 8): 8.3 s
+Constant feature columns dropped: swvl1, u10, v10, t2m, d2m, ssrd, e, tp, pev
+[time] GBT tuning on the inner validation date: 54.0 s
+04:38:21.770 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 1050.5 KiB
+04:38:22.256 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 1877.4 KiB
+04:38:22.938 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 3.3 MiB
+04:38:23.962 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.4 MiB
++----------------------+-----------------------+------------------+---------------+
+|model                 |hyperparameters        |validation_roc_auc|validation_date|
++----------------------+-----------------------+------------------+---------------+
+|gradient_boosting     |maxDepth=3 maxIter=40  |0.893580927717329 |2024-03-18     |
+|gradient_boosting     |maxDepth=3 maxIter=80  |0.8900362191033084|2024-03-18     |
+|random_forest_enhanced|numTrees=100 maxDepth=8|0.8809648082294359|2024-03-18     |
+|gradient_boosting     |maxDepth=5 maxIter=40  |0.874373396657718 |2024-03-18     |
+|gradient_boosting     |maxDepth=5 maxIter=80  |0.8676924486426726|2024-03-18     |
++----------------------+-----------------------+------------------+---------------+
+
+[report] model_selection -> hdfs://namenode:9000/user/smart_agri/results/ml/model_selection (5 rows) + results/ml/model_selection.csv
+[time] GBT fit (depth 3, 40 iterations): 6.2 s
+04:38:35.433 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 1039.9 KiB
+04:38:36.354 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 1898.8 KiB
+04:38:37.232 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 3.4 MiB
+Primary model (chosen on validation, not test): gradient_boosting
+04:38:41.851 [main] WARN  dev.ludovic.netlib.blas.InstanceBuilder - Failed to load implementation from:dev.ludovic.netlib.blas.JNIBLAS
+04:38:45.005 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.4 MiB
+04:38:45.437 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:38:45.561 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:38:45.791 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:38:46.100 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:38:46.524 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:38:46.629 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:38:46.855 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
++---------------------------+-------+------------------+------------------+-------------------+-------------------+--------------------+------------------+-------------------+-------+-------+-------+-------+
+|model                      |rows   |accuracy          |balanced_accuracy |precision_stressed |recall_stressed    |f1_stressed         |roc_auc           |pr_auc             |tp     |fp     |tn     |fn     |
++---------------------------+-------+------------------+------------------+-------------------+-------------------+--------------------+------------------+-------------------+-------+-------+-------+-------+
+|naive_persistence_threshold|48747.0|0.7008841569737625|0.6609633276280076|0.5991838883769909 |0.5174197215117932 |0.5553081826222209  |0.765121148594912 |0.6567006472866344 |9104.0 |6090.0 |25062.0|8491.0 |
+|random_forest_enhanced     |48747.0|0.6966992840585061|0.6533854026414389|0.5955652292205142 |0.497641375390736  |0.5422175434250859  |0.7276849275770989|0.5338784531477747 |8756.0 |5946.0 |25206.0|8839.0 |
+|logistic_regression        |48747.0|0.6390341969762242|0.5001199847974741|0.4782608695652174 |6.25177607274794E-4|0.001248722897037121|0.7066131890888597|0.6480775754384208 |11.0   |12.0   |31140.0|17584.0|
+|gradient_boosting          |48747.0|0.6759800603114038|0.6258712827262614|0.5648228176318064 |0.44569479965899406|0.49823691985132956 |0.6753497339922845|0.47056510250851347|7842.0 |6042.0 |25110.0|9753.0 |
+|random_forest              |48747.0|0.6290438385951956|0.5300841382308936|0.46314199395770395|0.1742540494458653 |0.2532314680982862  |0.6565997604463728|0.4590165260419784 |3066.0 |3554.0 |27598.0|14529.0|
+|majority_class             |48747.0|0.3609452889408579|0.5               |0.3609452889408579 |1.0                |0.5304332097313919  |0.5               |0.3609452889408579 |17595.0|31152.0|0.0    |0.0    |
++---------------------------+-------+------------------+------------------+-------------------+-------------------+--------------------+------------------+-------------------+-------+-------+-------+-------+
+
+[report] baseline_comparison -> hdfs://namenode:9000/user/smart_agri/results/ml/baseline_comparison (6 rows) + results/ml/baseline_comparison.csv
+[report] metrics -> hdfs://namenode:9000/user/smart_agri/results/ml/metrics (12 rows) + results/ml/metrics.csv
++----------------------------+---------------------+
+|feature                     |importance           |
++----------------------------+---------------------+
+|ndvi_anomaly_now            |0.37049880182627726  |
+|days_since_prior_observation|0.12461760764936994  |
+|soil_data_available         |0.11525092307486962  |
+|day_of_year_sin             |0.10413459986617392  |
+|baseline_observation_count  |0.07377387920077934  |
+|ndvi_rolling_std            |0.058309382349931514 |
+|day_of_year_cos             |0.04877548725111288  |
+|ndvi_change                 |0.04446336593935373  |
+|baseline_std_ndvi           |0.022240584569376935 |
+|water_content_fc            |0.014049147510534037 |
+|ndvi_lag1                   |0.009986578543485109 |
+|ndvi                        |0.00909352155855887  |
+|ph_water                    |0.002712541111450598 |
+|sand_pct                    |0.001224252971017832 |
+|nitrogen_g_kg               |3.3749545961047137E-4|
+|silt_pct                    |3.1021331360843967E-4|
+|baseline_mean_ndvi          |2.21617804489507E-4  |
+|ndvi_rolling_mean           |0.0                  |
+|soil_organic_carbon         |0.0                  |
++----------------------------+---------------------+
+
+[report] feature_importances -> hdfs://namenode:9000/user/smart_agri/results/ml/feature_importances (19 rows) + results/ml/feature_importances.csv
+[report] class_balance -> hdfs://namenode:9000/user/smart_agri/results/ml/class_balance (3 rows) + results/ml/class_balance.csv
+[report] run_metadata -> hdfs://namenode:9000/user/smart_agri/results/ml/run_metadata (15 rows) + results/ml/run_metadata.csv
++-----+-------------------+---------------+------------------+------------------+---------------+---------------+------------------+---------------------+----------------+---------+
+|alpha|qhat               |target_coverage|empirical_coverage|average_set_size  |ambiguous_count|empty_set_count|coverage_stressed |coverage_not_stressed|calibration_rows|test_rows|
++-----+-------------------+---------------+------------------+------------------+---------------+---------------+------------------+---------------------+----------------+---------+
+|0.05 |0.9252256224191779 |0.95           |0.8650788766488194|1.5631320901799086|27451          |0              |0.8047740835464621|0.8991397021058039   |39485           |48747    |
+|0.1  |0.8598781426925733 |0.9            |0.8071881346544403|1.3078958705151087|15009          |0              |0.69923273657289  |0.8681625577812019   |39485           |48747    |
+|0.2  |0.45146070500326085|0.8            |0.6547069563255175|0.9587051510862207|0              |2013           |0.4184711565785735|0.788135593220339    |39485           |48747    |
++-----+-------------------+---------------+------------------+------------------+---------------+---------------+------------------+---------------------+----------------+---------+
+
+[report] coverage_report -> hdfs://namenode:9000/user/smart_agri/results/conformal/coverage_report (3 rows) + results/conformal/coverage_report.csv
++-------------------+-----+--------------------+
+|action             |count|observed_stress_rate|
++-------------------+-----+--------------------+
+|InvestigatePriority|12447|0.5514581826946252  |
+|LowRisk            |24384|0.2170275590551181  |
+|Monitor            |11916|0.4564451158106747  |
++-------------------+-----+--------------------+
+
+[report] decision_summary -> hdfs://namenode:9000/user/smart_agri/results/decisions/decision_summary (3 rows) + results/decisions/decision_summary.csv
+[report] decisions -> hdfs://namenode:9000/user/smart_agri/results/decisions/decisions (5000 rows) + results/decisions/decisions.csv
+Model saved to hdfs://namenode:9000/user/smart_agri/results/models/crop_stress_rf

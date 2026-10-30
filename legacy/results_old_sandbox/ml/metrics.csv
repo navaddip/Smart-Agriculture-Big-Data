@@ -1,0 +1,12 @@
+metric,value
+accuracy,0.5136054421768708
+precision_weighted,0.5073372206025266
+recall_weighted,0.5136054421768708
+f1,0.3865708312083312
+roc_auc,0.5759273838744037
+pr_auc,0.5808961756500794
+confusion_actual0_pred0,144
+confusion_actual0_pred1,7
+confusion_actual1_pred0,136
+confusion_actual1_pred1,7
+positive_class_recall,0.04895104895104895

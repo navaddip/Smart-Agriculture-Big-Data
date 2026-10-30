@@ -1,0 +1,26 @@
+[debug] Created transactional ClassFileManager with tempDir = /app/target/scala-2.12/test-classes.bak
+[debug] About to delete class files:
+[debug] 	CanonicalHistoricalDatasetBuilderSpec.class
+[debug] 	NdviTileMonthAggregatorSpec$DoubleTolerance$.class
+[debug] 	NdviTileMonthAggregatorSpec$OptionDoubleContains.class
+[debug] 	NdviTileMonthAggregatorSpec.class
+[debug] 	FeatureEngineeringSpec.class
+[debug] 	NdviTileMonthAggregatorSpec$ToleranceOps.class
+[debug] 	NdviTileMonthAggregatorSpec$DoubleTolerance.class
+[debug] We backup class files:
+[debug] 	CanonicalHistoricalDatasetBuilderSpec.class
+[debug] 	NdviTileMonthAggregatorSpec$DoubleTolerance$.class
+[debug] 	NdviTileMonthAggregatorSpec$OptionDoubleContains.class
+[debug] 	NdviTileMonthAggregatorSpec.class
+[debug] 	FeatureEngineeringSpec.class
+[debug] 	NdviTileMonthAggregatorSpec$ToleranceOps.class
+[debug] 	NdviTileMonthAggregatorSpec$DoubleTolerance.class
+[debug] Registering generated classes:
+[debug] 	CanonicalHistoricalDatasetBuilderSpec.class
+[debug] 	NdviTileMonthAggregatorSpec$DoubleTolerance$.class
+[debug] 	NdviTileMonthAggregatorSpec$OptionDoubleContains.class
+[debug] 	NdviTileMonthAggregatorSpec.class
+[debug] 	FeatureEngineeringSpec.class
+[debug] 	NdviTileMonthAggregatorSpec$ToleranceOps.class
+[debug] 	NdviTileMonthAggregatorSpec$DoubleTolerance.class
+[debug] Removing the temporary directory used for backing up class files: /app/target/scala-2.12/test-classes.bak

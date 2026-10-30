@@ -1,0 +1,12 @@
+key,value
+seed,42
+num_trees_used_this_run,10
+max_depth_used_this_run,3
+documented_default_num_trees,100
+documented_default_max_depth,8
+cells_in_subset,150
+canonical_rows,2800
+train_rows,728
+test_rows,294
+split_cutoff,2024-04-07
+sandbox_scope_note,reduced scale due to 1-CPU-core sandbox; full pipeline (19926 cells / 398027 rows) does not complete within one tool-call time budget

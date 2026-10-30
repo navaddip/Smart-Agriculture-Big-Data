@@ -1,0 +1,3 @@
+tile,observations,dates,cells,mean_ndvi,mean_clear_fraction,first_date,last_date
+T43PGQ,186184,19,9917,0.3818,0.9796,2023-04-08,2024-05-02
+T43PHQ,207156,21,9999,0.3803,0.9817,2023-04-08,2024-06-01

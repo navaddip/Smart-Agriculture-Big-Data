@@ -1,0 +1,30 @@
+15:55:44.981 [main] WARN  org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+  Nirtogen.tif                 -> nitrogen_g_kg        885x837 valid=95.8%
+  PH_WATER.tif                 -> ph_water             885x837 valid=95.8%
+  Solid organic carbon.tif     -> soil_organic_carbon  885x837 valid=95.8%
+  clay content.tif             -> clay_pct             885x837 valid=95.8%
+  sand.tif                     -> sand_pct             885x837 valid=95.8%
+  slit.tif                     -> silt_pct             885x837 valid=95.8%
+  watevol content -33.tif      -> water_content_fc     885x837 valid=95.8%
+[time] write soilgrids.parquet: 6.1 s
++------+-----+------+---------+---------+----------------------+--------------+-------+---------+--------------------+
+|tile  |cells|direct|filled_2x|filled_4x|missing_outside_extent|missing_nodata|mean_ph|mean_clay|mean_texture_sum_raw|
++------+-----+------+---------+---------+----------------------+--------------+-------+---------+--------------------+
+|T43PGQ|9917 |9780  |93       |39       |0                     |5             |6.509  |25.29    |100.0               |
+|T43PHQ|9999 |2361  |58       |100      |7480                  |0             |6.604  |25.92    |100.0               |
++------+-----+------+---------+---------+----------------------+--------------+-------+---------+--------------------+
+
++---------------+-----+
+|texture_class  |count|
++---------------+-----+
+|sandy clay loam|9934 |
+|unknown        |7485 |
+|clay loam      |1519 |
+|sandy loam     |975  |
+|sandy clay     |2    |
+|clay           |1    |
++---------------+-----+
+
+[report] soilgrids_quality -> hdfs://namenode:9000/user/smart_agri/processed/_reports/soilgrids_quality (2 rows) + results/preprocessing/soilgrids_quality.csv
+[report] soilgrids_texture_classes -> hdfs://namenode:9000/user/smart_agri/processed/_reports/soilgrids_texture_classes (6 rows) + results/preprocessing/soilgrids_texture_classes.csv
+Wrote 19916 cell soil profiles -> hdfs://namenode:9000/user/smart_agri/processed/soilgrids.parquet

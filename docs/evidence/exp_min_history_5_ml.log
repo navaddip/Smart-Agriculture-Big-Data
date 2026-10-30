@@ -1,0 +1,129 @@
+04:52:06.767 [main] WARN  org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+04:52:41.820 [main] WARN  org.apache.spark.sql.catalyst.util.SparkStringUtils - Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+Rows with a null feature (dropped, reported): 0
+FIT=145859 (dates < 2024-03-18)  CALIBRATION=59393  TEST=48763
++-----------+-----+--------+------------+-------------------+
+|partition  |dates|stressed|not_stressed|stressed_rate      |
++-----------+-----+--------+------------+-------------------+
+|fit        |9    |99325   |46534       |0.6809658642935986 |
+|calibration|3    |27346   |32047       |0.4604246291650531 |
+|test       |3    |17602   |31161       |0.36097040789122903|
++-----------+-----+--------+------------+-------------------+
+
+04:52:57.893 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 1052.6 KiB
+04:52:58.775 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 1932.5 KiB
+04:52:59.960 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 3.6 MiB
+04:53:01.053 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 1002.9 KiB
+[time] RandomForest fit (100 trees, depth 8): 9.8 s
+Constant feature columns dropped: swvl1, u10, v10, t2m, d2m, ssrd, e, tp, pev
+[time] GBT tuning on the inner validation date: 58.4 s
+04:54:07.466 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 1062.4 KiB
+04:54:08.232 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 1941.2 KiB
+04:54:09.345 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 3.6 MiB
+04:54:10.924 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
++----------------------+-----------------------+------------------+---------------+
+|model                 |hyperparameters        |validation_roc_auc|validation_date|
++----------------------+-----------------------+------------------+---------------+
+|random_forest_enhanced|numTrees=100 maxDepth=8|0.8979887343614086|2024-03-13     |
+|gradient_boosting     |maxDepth=3 maxIter=80  |0.7755351918340603|2024-03-13     |
+|gradient_boosting     |maxDepth=5 maxIter=80  |0.7217485420127051|2024-03-13     |
+|gradient_boosting     |maxDepth=3 maxIter=40  |0.6979937260632091|2024-03-13     |
+|gradient_boosting     |maxDepth=5 maxIter=40  |0.6830596844733184|2024-03-13     |
++----------------------+-----------------------+------------------+---------------+
+
+[report] model_selection -> hdfs://namenode:9000/user/smart_agri/results/experiments/min_history_5/ml/model_selection (5 rows) + results/experiments/min_history_5/ml/model_selection.csv
+[time] GBT fit (depth 3, 80 iterations): 13.4 s
+04:54:28.420 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 1044.9 KiB
+04:54:29.610 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 1929.4 KiB
+04:54:31.247 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 3.6 MiB
+04:54:33.025 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 1006.1 KiB
+Primary model (chosen on validation, not test): random_forest_enhanced
+04:54:37.015 [main] WARN  dev.ludovic.netlib.blas.InstanceBuilder - Failed to load implementation from:dev.ludovic.netlib.blas.JNIBLAS
+04:54:40.190 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:54:40.560 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:54:40.681 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:54:40.907 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:54:41.314 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:54:41.700 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:54:41.815 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:54:42.128 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
++---------------------------+-------+-------------------+------------------+-------------------+-------------------+------------------+------------------+-------------------+-------+-------+-------+-------+
+|model                      |rows   |accuracy           |balanced_accuracy |precision_stressed |recall_stressed    |f1_stressed       |roc_auc           |pr_auc             |tp     |fp     |tn     |fn     |
++---------------------------+-------+-------------------+------------------+-------------------+-------------------+------------------+------------------+-------------------+-------+-------+-------+-------+
+|logistic_regression        |48763.0|0.7430428808727929 |0.7058877212582084|0.6682366989518376 |0.5722645153959778 |0.6165381319622966|0.7821270109643583|0.6885967127759931 |10073.0|5001.0 |26160.0|7529.0 |
+|naive_persistence_threshold|48763.0|0.7008387506921231 |0.6609133950862811|0.5991577839189367 |0.5173275764117714 |0.5552439024390243|0.7649436635191611|0.6563799023557904 |9106.0 |6092.0 |25069.0|8496.0 |
+|random_forest_enhanced     |48763.0|0.6931690010868896 |0.6446904476711861|0.5948412128179336 |0.47034427905919785|0.5253172588832487|0.7328534951258947|0.5329254404884093 |8279.0 |5639.0 |25522.0|9323.0 |
+|gradient_boosting          |48763.0|0.6910772511945532 |0.6704191913755012|0.5687879444926279 |0.596125440290876  |0.582135922330097 |0.7188496936536931|0.4929367467234679 |10493.0|7955.0 |23206.0|7109.0 |
+|random_forest              |48763.0|0.5837417714250559 |0.5371436699578598|0.4141729275436139 |0.3695602772412226 |0.3905968536087427|0.5661540105306381|0.376991598524303  |6505.0 |9201.0 |21960.0|11097.0|
+|majority_class             |48763.0|0.36097040789122903|0.5               |0.36097040789122903|1.0                |0.530460333006856 |0.5               |0.36097040789122903|17602.0|31161.0|0.0    |0.0    |
++---------------------------+-------+-------------------+------------------+-------------------+-------------------+------------------+------------------+-------------------+-------+-------+-------+-------+
+
+[report] baseline_comparison -> hdfs://namenode:9000/user/smart_agri/results/experiments/min_history_5/ml/baseline_comparison (6 rows) + results/experiments/min_history_5/ml/baseline_comparison.csv
+[report] metrics -> hdfs://namenode:9000/user/smart_agri/results/experiments/min_history_5/ml/metrics (12 rows) + results/experiments/min_history_5/ml/metrics.csv
++----------------------------+---------------------+
+|feature                     |importance           |
++----------------------------+---------------------+
+|ndvi_anomaly_now            |0.5850932828134805   |
+|day_of_year_sin             |0.0853463718245766   |
+|baseline_observation_count  |0.0645056774187801   |
+|day_of_year_cos             |0.06194624222771515  |
+|days_since_prior_observation|0.048674166597559194 |
+|ndvi_change                 |0.030163503227792595 |
+|baseline_mean_ndvi          |0.030110478817513355 |
+|ndvi_rolling_std            |0.02378487641155987  |
+|ndvi                        |0.012276625243152008 |
+|baseline_std_ndvi           |0.011100424937233188 |
+|nitrogen_g_kg               |0.010395183957280214 |
+|ndvi_lag1                   |0.009582084677257373 |
+|ndvi_rolling_mean           |0.0067470263659990355|
+|silt_pct                    |0.005136450647345575 |
+|sand_pct                    |0.004792142570740551 |
+|soil_organic_carbon         |0.004301068024164589 |
+|ph_water                    |0.0030373430231621567|
+|soil_data_available         |0.0018210673176076303|
+|water_content_fc            |0.0011859838970803265|
++----------------------------+---------------------+
+
+[report] feature_importances -> hdfs://namenode:9000/user/smart_agri/results/experiments/min_history_5/ml/feature_importances (19 rows) + results/experiments/min_history_5/ml/feature_importances.csv
+[report] class_balance -> hdfs://namenode:9000/user/smart_agri/results/experiments/min_history_5/ml/class_balance (3 rows) + results/experiments/min_history_5/ml/class_balance.csv
+[report] run_metadata -> hdfs://namenode:9000/user/smart_agri/results/experiments/min_history_5/ml/run_metadata (15 rows) + results/experiments/min_history_5/ml/run_metadata.csv
+04:54:45.473 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.4 MiB
+04:54:45.961 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:54:46.143 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:54:46.309 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
++-----+------------------+---------------+------------------+------------------+---------------+---------------+------------------+---------------------+----------------+---------+
+|alpha|qhat              |target_coverage|empirical_coverage|average_set_size  |ambiguous_count|empty_set_count|coverage_stressed |coverage_not_stressed|calibration_rows|test_rows|
++-----+------------------+---------------+------------------+------------------+---------------+---------------+------------------+---------------------+----------------+---------+
+|0.05 |0.8406214914378899|0.95           |0.9569140536882472|1.7675696737280315|37429          |0              |0.9671628224065447|0.9511248034401977   |59393           |48763    |
+|0.1  |0.7369922399426917|0.9            |0.8628673379406517|1.4164017800381437|20305          |0              |0.79854561981593  |0.8992009242322133   |59393           |48763    |
+|0.2  |0.5438056534187757|0.8            |0.721120521707032 |1.06111190861924  |2980           |0              |0.5251675945915237|0.8318089920092423   |59393           |48763    |
++-----+------------------+---------------+------------------+------------------+---------------+---------------+------------------+---------------------+----------------+---------+
+
+[report] coverage_report -> hdfs://namenode:9000/user/smart_agri/results/experiments/min_history_5/conformal/coverage_report (3 rows) + results/experiments/min_history_5/conformal/coverage_report.csv
+04:54:46.603 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:54:46.804 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.7 MiB
+04:54:47.306 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:54:47.516 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
++-------------------+-----+--------------------+
+|action             |count|observed_stress_rate|
++-------------------+-----+--------------------+
+|InvestigatePriority|11995|0.593497290537724   |
+|LowRisk            |20440|0.17348336594911937 |
+|Monitor            |16328|0.4248530132288094  |
++-------------------+-----+--------------------+
+
+04:54:47.644 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:54:47.797 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:54:47.860 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:54:47.968 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.7 MiB
+04:54:48.142 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:54:48.283 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:54:48.340 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:54:48.475 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+[report] decision_summary -> hdfs://namenode:9000/user/smart_agri/results/experiments/min_history_5/decisions/decision_summary (3 rows) + results/experiments/min_history_5/decisions/decision_summary.csv
+04:54:48.641 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+04:54:48.758 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.7 MiB
+04:54:48.992 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.5 MiB
+[report] decisions -> hdfs://namenode:9000/user/smart_agri/results/experiments/min_history_5/decisions/decisions (5000 rows) + results/experiments/min_history_5/decisions/decisions.csv
+04:54:49.250 [dag-scheduler-event-loop] WARN  org.apache.spark.scheduler.DAGScheduler - Broadcasting large task binary with size 2.7 MiB
+Model saved to hdfs://namenode:9000/user/smart_agri/results/models/crop_stress_rf_min_history_5

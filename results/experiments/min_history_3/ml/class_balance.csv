@@ -1,0 +1,4 @@
+partition,dates,stressed,not_stressed,stressed_rate
+fit,11,89890,75900,0.54219192954943
+calibration,4,42182,37063,0.53229856773298
+test,3,17603,31162,0.360976109914898

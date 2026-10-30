@@ -1,0 +1,122 @@
+Configured Capacity: 5405505884160 (4.92 TB)
+Present Capacity: 4468531467302 (4.06 TB)
+DFS Remaining: 4313903095808 (3.92 TB)
+DFS Used: 154628371494 (144.01 GB)
+DFS Used%: 3.46%
+Replicated Blocks:
+	Under replicated blocks: 0
+	Blocks with corrupt replicas: 0
+	Missing blocks: 0
+	Missing blocks (with replication factor 1): 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+Erasure Coded Block Groups: 
+	Low redundancy block groups: 0
+	Block groups with corrupt internal blocks: 0
+	Missing block groups: 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+
+-------------------------------------------------
+Live datanodes (5):
+
+Name: 172.19.0.10:9866 (datanode3.smartagri)
+Hostname: datanode3
+Decommission Status : Normal
+Configured Capacity: 1081101176832 (1006.85 GB)
+DFS Used: 32111263628 (29.91 GB)
+Non DFS Used: 131217002612 (122.21 GB)
+DFS Remaining: 862780555264 (803.53 GB)
+DFS Used%: 2.97%
+DFS Remaining%: 79.81%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 1
+Last contact: Sun Sep 27 16:07:47 UTC 2026
+Last Block Report: Sun Sep 27 15:53:05 UTC 2026
+Num of Blocks: 1521
+
+
+Name: 172.19.0.11:9866 (datanode2.smartagri)
+Hostname: datanode2
+Decommission Status : Normal
+Configured Capacity: 1081101176832 (1006.85 GB)
+DFS Used: 31565570558 (29.40 GB)
+Non DFS Used: 131762535938 (122.71 GB)
+DFS Remaining: 862780715008 (803.53 GB)
+DFS Used%: 2.92%
+DFS Remaining%: 79.81%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 1
+Last contact: Sun Sep 27 16:07:47 UTC 2026
+Last Block Report: Sun Sep 27 15:53:54 UTC 2026
+Num of Blocks: 1501
+
+
+Name: 172.19.0.12:9866 (datanode5.smartagri)
+Hostname: datanode5
+Decommission Status : Normal
+Configured Capacity: 1081101176832 (1006.85 GB)
+DFS Used: 30111943984 (28.04 GB)
+Non DFS Used: 133216162512 (124.07 GB)
+DFS Remaining: 862780715008 (803.53 GB)
+DFS Used%: 2.79%
+DFS Remaining%: 79.81%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 1
+Last contact: Sun Sep 27 16:07:48 UTC 2026
+Last Block Report: Sun Sep 27 15:07:18 UTC 2026
+Num of Blocks: 1530
+
+
+Name: 172.19.0.8:9866 (datanode1.smartagri)
+Hostname: datanode1
+Decommission Status : Normal
+Configured Capacity: 1081101176832 (1006.85 GB)
+DFS Used: 28948628606 (26.96 GB)
+Non DFS Used: 134379637634 (125.15 GB)
+DFS Remaining: 862780555264 (803.53 GB)
+DFS Used%: 2.68%
+DFS Remaining%: 79.81%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 1
+Last contact: Sun Sep 27 16:07:47 UTC 2026
+Last Block Report: Sun Sep 27 15:07:17 UTC 2026
+Num of Blocks: 1479
+
+
+Name: 172.19.0.9:9866 (datanode4.smartagri)
+Hostname: datanode4
+Decommission Status : Normal
+Configured Capacity: 1081101176832 (1006.85 GB)
+DFS Used: 31890964718 (29.70 GB)
+Non DFS Used: 131437301522 (122.41 GB)
+DFS Remaining: 862780555264 (803.53 GB)
+DFS Used%: 2.95%
+DFS Remaining%: 79.81%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 1
+Last contact: Sun Sep 27 16:07:47 UTC 2026
+Last Block Report: Sun Sep 27 15:07:17 UTC 2026
+Num of Blocks: 1514
+
+

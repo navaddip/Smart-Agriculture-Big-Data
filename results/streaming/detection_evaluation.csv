@@ -1,0 +1,4 @@
+condition,fields,fields_with_high_alert,correctly_detected,rate,meaning
+drying_soil,33,32,32,0.9697,detection rate (recall)
+humid_microclimate,26,26,26,1.0,detection rate (recall)
+normal,141,0,0,0.0,false-alarm rate

@@ -1,0 +1,11 @@
+feature,importance
+day_of_year_cos,0.2430
+day_of_year_sin,0.2314
+pev,0.1626
+u10,0.1213
+baseline_std_ndvi,0.0599
+sand_pct,0.0373
+v10,0.0284
+silt_pct,0.0264
+soil_organic_carbon,0.0212
+water_content_fc,0.0170

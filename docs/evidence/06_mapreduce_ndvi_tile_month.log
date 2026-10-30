@@ -1,0 +1,105 @@
+15:57:48.815 [main] WARN  org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+NDVI flat input export complete: ExportResult(hdfs://namenode:9000/user/smart_agri/processed/sentinel2_ndvi.parquet,hdfs://namenode:9000/user/smart_agri/processed/mapreduce/ndvi_flat_input,SourceValidation(393340,0,0,393340),393340)
+2026-09-27 15:58:51,853 INFO client.RMProxy: Connecting to ResourceManager at resourcemanager/172.19.0.3:8032
+2026-09-27 15:58:51,952 INFO client.AHSProxy: Connecting to Application History server at historyserver/172.19.0.4:10200
+2026-09-27 15:58:52,045 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+2026-09-27 15:58:52,053 INFO mapreduce.JobResourceUploader: Disabling Erasure Coding for path: /tmp/hadoop-yarn/staging/root/.staging/job_1790521642675_0012
+2026-09-27 15:58:52,149 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+2026-09-27 15:58:55,419 INFO input.FileInputFormat: Total input files to process : 2
+2026-09-27 15:58:55,443 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+2026-09-27 15:58:55,464 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+2026-09-27 15:58:55,471 INFO mapreduce.JobSubmitter: number of splits:2
+2026-09-27 15:58:55,600 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+2026-09-27 15:58:55,609 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1790521642675_0012
+2026-09-27 15:58:55,610 INFO mapreduce.JobSubmitter: Executing with tokens: []
+2026-09-27 15:58:55,774 INFO conf.Configuration: resource-types.xml not found
+2026-09-27 15:58:55,774 INFO resource.ResourceUtils: Unable to find 'resource-types.xml'.
+2026-09-27 15:58:55,830 INFO impl.YarnClientImpl: Submitted application application_1790521642675_0012
+2026-09-27 15:58:55,851 INFO mapreduce.Job: The url to track the job: http://resourcemanager:8088/proxy/application_1790521642675_0012/
+2026-09-27 15:58:55,851 INFO mapreduce.Job: Running job: job_1790521642675_0012
+2026-09-27 15:59:01,888 INFO mapreduce.Job: Job job_1790521642675_0012 running in uber mode : false
+2026-09-27 15:59:01,889 INFO mapreduce.Job:  map 0% reduce 0%
+2026-09-27 15:59:06,920 INFO mapreduce.Job:  map 50% reduce 0%
+2026-09-27 15:59:08,927 INFO mapreduce.Job:  map 100% reduce 0%
+2026-09-27 15:59:11,937 INFO mapreduce.Job:  map 100% reduce 100%
+2026-09-27 15:59:11,942 INFO mapreduce.Job: Job job_1790521642675_0012 completed successfully
+2026-09-27 15:59:11,996 INFO mapreduce.Job: Counters: 54
+	File System Counters
+		FILE: Number of bytes read=10226846
+		FILE: Number of bytes written=21140367
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=16968355
+		HDFS: Number of bytes written=1806
+		HDFS: Number of read operations=11
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+		HDFS: Number of bytes read erasure-coded=0
+	Job Counters 
+		Launched map tasks=2
+		Launched reduce tasks=1
+		Rack-local map tasks=2
+		Total time spent by all maps in occupied slots (ms)=23036
+		Total time spent by all reduces in occupied slots (ms)=7152
+		Total time spent by all map tasks (ms)=5759
+		Total time spent by all reduce tasks (ms)=1788
+		Total vcore-milliseconds taken by all map tasks=5759
+		Total vcore-milliseconds taken by all reduce tasks=1788
+		Total megabyte-milliseconds taken by all map tasks=5897216
+		Total megabyte-milliseconds taken by all reduce tasks=1830912
+	Map-Reduce Framework
+		Map input records=393340
+		Map output records=393340
+		Map output bytes=9440160
+		Map output materialized bytes=10226852
+		Input split bytes=390
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=16
+		Reduce shuffle bytes=10226852
+		Reduce input records=393340
+		Reduce output records=16
+		Spilled Records=786680
+		Shuffled Maps =2
+		Failed Shuffles=0
+		Merged Map outputs=2
+		GC time elapsed (ms)=126
+		CPU time spent (ms)=5570
+		Physical memory (bytes) snapshot=1291014144
+		Virtual memory (bytes) snapshot=8087457792
+		Total committed heap usage (bytes)=1213726720
+		Peak Map Physical memory (bytes)=505040896
+		Peak Map Virtual memory (bytes)=2697072640
+		Peak Reduce Physical memory (bytes)=281296896
+		Peak Reduce Virtual memory (bytes)=2695667712
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=16967965
+	File Output Format Counters 
+		Bytes Written=1806
+NdviTileMonthAggregation job SUCCEEDED. Output: hdfs://namenode:9000/user/smart_agri/processed/mapreduce/ndvi_tile_monthly
+--- MapReduce output (tile, month -> NDVI statistics) ---
+2026-09-27 15:59:15,124 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+T43PGQ	2023-04	29233	29233	0	0	0.40727478212534624	0.018837553826400042	0.8337272870385027	0.09011990563957537	1.0
+T43PGQ	2023-05	9693	9693	0	0	0.5351009644921476	0.04781013172489887	0.8183265097577046	0.10916921566985366	1.0
+T43PGQ	2023-10	9863	9863	0	0	0.5615179038984851	0.1474745964118091	0.8287865988854985	0.09117264562947623	1.0
+T43PGQ	2024-01	19681	19681	0	0	0.4286327103133732	0.11661578345557821	0.8555579870447274	0.08992116452619894	1.0
+T43PGQ	2024-02	29565	29565	0	0	0.36158407801297215	0.09496678746165381	0.7747241783325687	0.08514798262902225	1.0
+T43PGQ	2024-03	49416	49416	0	0	0.3348152131538204	0.09831596634154012	0.7784329150569638	0.07589975183646873	1.0
+T43PGQ	2024-04	29550	29550	0	0	0.3322290147510566	0.0983153904344793	0.7963727702926675	0.0776989262298383	1.0
+T43PGQ	2024-05	9183	9183	0	0	0.32198809556547586	0.10855984031271389	0.7281838819872384	0.07353857756361541	1.0
+T43PHQ	2023-04	29784	29784	0	0	0.42881023322160294	-0.030464639800460453	0.8443022803022462	0.08534848131269444	1.0
+T43PHQ	2023-05	9905	9905	0	0	0.5052013903291207	-0.07333805729829769	0.8295416522067451	0.09248363433990875	1.0
+T43PHQ	2023-10	9904	9904	0	0	0.5716915895782289	0.15234677435172234	0.8762525635420522	0.09230562315626649	1.0
+T43PHQ	2024-01	19713	19713	0	0	0.41926569685761716	0.16250216970322257	0.8911069413832607	0.09385804823050246	1.0
+T43PHQ	2024-02	38271	38271	0	0	0.3652123540553367	-0.07086938037220766	0.8666015132496374	0.07889960492583137	1.0
+T43PHQ	2024-03	49975	49975	0	0	0.3263406517615931	-0.06364137637981486	0.7868879928061885	0.05862804108378686	1.0
+T43PHQ	2024-04	39766	39766	0	0	0.30928447929739195	-0.05944511744270824	0.7660423125518431	0.056922426926909936	1.0
+T43PHQ	2024-06	9838	9838	0	0	0.4561525029839002	0.17206191830147455	0.7818812208470526	0.0932435038566007	1.0

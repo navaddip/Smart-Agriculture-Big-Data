@@ -1,0 +1,67 @@
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20230413T050651_N0510_R019_T43PHQ_20240829T072229.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20230423T050651_N0510_R019_T43PGQ_20240830T140051 (1).zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20230423T050651_N0510_R019_T43PGQ_20240830T140051.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20231020T050831_N0510_R019_T43PHQ_20241106T203411.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240118T051131_N0510_R019_T43PGQ_20240118T081358.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240118T051131_N0510_R019_T43PHQ_20240118T081358.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240207T051001_N0510_R019_T43PGQ_20240207T085751.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240207T051001_N0510_R019_T43PHQ_20240207T085751.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240217T050901_N0510_R019_T43PHQ_20240217T091753.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240227T050751_N0510_R019_T43PGQ_20240227T085252.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240308T050651_N0510_R019_T43PGQ_20240308T084749.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240308T050651_N0510_R019_T43PHQ_20240308T084749.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240318T050651_N0510_R019_T43PGQ_20240318T084852.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240318T050651_N0510_R019_T43PHQ_20240318T084852.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240328T050651_N0510_R019_T43PGQ_20240328T085651.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240328T050651_N0510_R019_T43PHQ_20240328T085651.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240407T050651_N0510_R019_T43PGQ_20240407T085652.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240407T050651_N0510_R019_T43PHQ_20240407T085652.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240427T050651_N0510_R019_T43PGQ_20240427T095648.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240427T050651_N0510_R019_T43PHQ_20240427T095648.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20230408T050659_N0510_R019_T43PGQ_20241011T212033.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20230408T050659_N0510_R019_T43PHQ_20241011T212033.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20230418T050659_N0510_R019_T43PGQ_20240905T094026.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20230418T050659_N0510_R019_T43PHQ_20240905T094026.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20230528T050659_N0510_R019_T43PGQ_20240907T232902.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20230528T050659_N0510_R019_T43PHQ_20240907T232902.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20231025T050859_N0510_R019_T43PGQ_20241102T215233.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240123T051119_N0510_R019_T43PGQ_20240123T073307.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240123T051119_N0510_R019_T43PHQ_20240123T073307.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240212T050939_N0510_R019_T43PHQ_20240212T074018.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240222T050829_N0510_R019_T43PGQ_20240222T074738.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240222T050829_N0510_R019_T43PHQ_20240222T074738.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240313T050649_N0510_R019_T43PGQ_20240313T145847.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240313T050649_N0510_R019_T43PHQ_20240313T145847.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240323T050649_N0510_R019_T43PGQ_20240323T082303.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240323T050649_N0510_R019_T43PHQ_20240323T082303.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240402T050649_N0510_R019_T43PGQ_20240402T073359.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240402T050649_N0510_R019_T43PHQ_20240402T073359.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240422T050649_N0510_R019_T43PHQ_20240422T081329.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240502T050649_N0510_R019_T43PGQ_20240502T075221.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240601T050649_N0510_R019_T43PHQ_20240601T073715.zip
+890.1 K  2.6 M    /user/smart_agri/raw/era5/era5.zip
+670.9 K  2.0 M    /user/smart_agri/raw/soilgrids/Nirtogen.tif
+265.9 K  797.6 K  /user/smart_agri/raw/soilgrids/PH_WATER.tif
+723.6 K  2.1 M    /user/smart_agri/raw/soilgrids/Solid organic carbon.tif
+635.2 K  1.9 M    /user/smart_agri/raw/soilgrids/clay content.tif
+644.8 K  1.9 M    /user/smart_agri/raw/soilgrids/sand.tif
+626.4 K  1.8 M    /user/smart_agri/raw/soilgrids/slit.tif
+558.6 K  1.6 M    /user/smart_agri/raw/soilgrids/watevol content -33.tif
+19.5 K   58.4 K   /user/smart_agri/processed/_reports
+49.6 M   148.8 M  /user/smart_agri/processed/canonical_historical.parquet
+3.2 M    9.6 M    /user/smart_agri/processed/era5_weather.parquet
+16.2 M   48.6 M   /user/smart_agri/processed/mapreduce
+12.2 M   36.6 M   /user/smart_agri/processed/ml_features
+2.6 M    7.8 M    /user/smart_agri/processed/ml_features_eval
+15.0 M   45.0 M   /user/smart_agri/processed/sentinel2_ndvi.parquet
+950.3 K  2.8 M    /user/smart_agri/processed/soilgrids.parquet
+531      1.6 K    /user/smart_agri/results/conformal
+1.7 M    5.2 M    /user/smart_agri/results/decisions
+5.9 K    17.6 K   /user/smart_agri/results/kalman
+2.3 K    6.9 K    /user/smart_agri/results/ml
+839.2 K  2.5 M    /user/smart_agri/results/models
+819.9 K  2.4 M    /user/smart_agri/results/predictions
+216      648      /user/smart_agri/results/streaming
+709.0 K  2.1 M    /user/smart_agri/streaming/alerts
+711.1 K  2.1 M    /user/smart_agri/streaming/checkpoints
+3.6 M    10.8 M   /user/smart_agri/streaming/iot_filtered

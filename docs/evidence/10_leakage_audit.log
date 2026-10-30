@@ -1,0 +1,25 @@
+Scanned 69 source files under /src/main/scala
+  [PASS]  1 structural        ObservableReading (Kafka/stream type) has no health or ground-truth field
+  [PASS]  2 structural        ObservableReading field set is exactly the observable schema
+  [PASS]  3 structural        ground truth lives in a separate type (GroundTruthReading)
+  [PASS]  4 structural        DecisionEngine.DecisionInput carries no label
+  [PASS]  5 structural        ConformalPrediction.calibrate accepts calibration data only
+  [PASS]  6 feature-set       no future / target column in the approved feature list
+  [PASS]  7 feature-set       no ground-truth / sensor-health column in the feature list
+  [PASS]  8 feature-set       identity columns (tile/cell/date) are not features
+  [PASS]  9 feature-set       feature list has no duplicates
+  [PASS] 10 scope             future_* identifiers absent from model-consuming code
+  [PASS] 11 scope             future_* identifiers present where the target IS constructed (scanner sanity)
+  [PASS] 12 scope             ground-truth identifiers absent outside simulator / evaluation code
+  [PASS] 13 temporal          every rowsBetween window ends strictly before the current row
+  [PASS] 14 temporal          lead() (look-ahead) used only for target construction
+  [PASS] 15 temporal          no random row split in features/ or ml/ (chronological only)
+  [PASS] 16 train-only        target distribution + imputation statistics computed on TRAIN only
+  [PASS] 17 train-only        conformal qhat computed from the calibration split, not the test split
+  [PASS] 18 train-only        hyper-parameters and primary-model choice use a validation date inside the fit period only
+  [PASS] 19 positive-control  planted future_ndvi in ml/ is detected
+  [PASS] 20 positive-control  planted trueValue in streaming/ is detected
+  [PASS] 21 positive-control  planted rowsBetween(-4, 0) is detected
+  [PASS] 22 positive-control  reflection check flags a type that has a sensorHealth field
+  [PASS] 23 positive-control  comment stripping removes commented-out identifiers (no false positives)
+23/23 checks passed -> /results/leakage_audit/leakage_audit_report.csv

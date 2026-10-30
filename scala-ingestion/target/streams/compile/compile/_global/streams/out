@@ -1,0 +1,83 @@
+[error] /app/src/main/scala/smartagri/audit/LeakageAudit.scala:120:49: type ConformalPrediction$ is not a member of package smartagri.conformal
+[error]     val calibrate = classOf[smartagri.conformal.ConformalPrediction$].getMethods.filter(_.getName == "calibrate")
+[error]                                                 ^
+[error] /app/src/main/scala/smartagri/kalman/KalmanFusionPipeline.scala:129:52: value tile is not a member of Iterator[smartagri.kalman.KalmanFusionPipeline.KalmanOutputRow]
+[error] Error occurred in an application involving default arguments.
+[error]           while (buffered.hasNext && buffered.head.tile == first.tile &&
+[error]                                                    ^
+[error] /app/src/main/scala/smartagri/kalman/KalmanFusionPipeline.scala:129:66: value tile is not a member of Iterator[smartagri.kalman.KalmanFusionPipeline.KalmanOutputRow]
+[error] Error occurred in an application involving default arguments.
+[error]           while (buffered.hasNext && buffered.head.tile == first.tile &&
+[error]                                                                  ^
+[error] /app/src/main/scala/smartagri/kalman/KalmanFusionPipeline.scala:130:32: value cellRow is not a member of Iterator[smartagri.kalman.KalmanFusionPipeline.KalmanOutputRow]
+[error] Error occurred in an application involving default arguments.
+[error]                  buffered.head.cellRow == first.cellRow && buffered.head.cellCol == first.cellCol)
+[error]                                ^
+[error] /app/src/main/scala/smartagri/kalman/KalmanFusionPipeline.scala:130:49: value cellRow is not a member of Iterator[smartagri.kalman.KalmanFusionPipeline.KalmanOutputRow]
+[error] Error occurred in an application involving default arguments.
+[error]                  buffered.head.cellRow == first.cellRow && buffered.head.cellCol == first.cellCol)
+[error]                                                 ^
+[error] /app/src/main/scala/smartagri/kalman/KalmanFusionPipeline.scala:130:74: value cellCol is not a member of Iterator[smartagri.kalman.KalmanFusionPipeline.KalmanOutputRow]
+[error] Error occurred in an application involving default arguments.
+[error]                  buffered.head.cellRow == first.cellRow && buffered.head.cellCol == first.cellCol)
+[error]                                                                          ^
+[error] /app/src/main/scala/smartagri/kalman/KalmanFusionPipeline.scala:130:91: value cellCol is not a member of Iterator[smartagri.kalman.KalmanFusionPipeline.KalmanOutputRow]
+[error] Error occurred in an application involving default arguments.
+[error]                  buffered.head.cellRow == first.cellRow && buffered.head.cellCol == first.cellCol)
+[error]                                                                                           ^
+[error] /app/src/main/scala/smartagri/kalman/KalmanFusionPipeline.scala:132:29: type mismatch;
+[error]  found   : scala.collection.mutable.ArrayBuffer[Iterator[smartagri.kalman.KalmanFusionPipeline.KalmanOutputRow]]
+[error]  required: Seq[smartagri.kalman.KalmanFusionPipeline.NdviObservation]
+[error] Error occurred in an application involving default arguments.
+[error]           runCellSequential(cell, config, adaptive).iterator
+[error]                             ^
+[error] /app/src/main/scala/smartagri/kalman/KalmanFusionPipeline.scala:134:9: value flatten is not a member of Iterator[Iterator[smartagri.kalman.KalmanFusionPipeline.KalmanOutputRow]]
+[error] possible cause: maybe a semicolon is missing before `value flatten'?
+[error] Error occurred in an application involving default arguments.
+[error]       }.flatten
+[error]         ^
+[error] /app/src/main/scala/smartagri/kalman/KalmanFusionPipeline.scala:137:27: type mismatch;
+[error]  found   : org.apache.spark.rdd.RDD[Nothing]
+[error]  required: org.apache.spark.rdd.RDD[A]
+[error] Note: Nothing <: A, but class RDD is invariant in type T.
+[error] You may wish to define T as +T instead. (SLS 4.5)
+[error]     spark.createDataFrame(resultRDD)
+[error]                           ^
+[error] /app/src/main/scala/smartagri/kalman/RobustnessExperiment.scala:153:52: value _1 is not a member of Seq[smartagri.kalman.RobustnessExperiment.SeriesResult]
+[error]           while (buffered.hasNext && buffered.head._1 == first._1 && buffered.head._2 == first._2 && buffered.head._3 == first._3)
+[error]                                                    ^
+[error] /app/src/main/scala/smartagri/kalman/RobustnessExperiment.scala:153:64: value _1 is not a member of Seq[smartagri.kalman.RobustnessExperiment.SeriesResult]
+[error]           while (buffered.hasNext && buffered.head._1 == first._1 && buffered.head._2 == first._2 && buffered.head._3 == first._3)
+[error]                                                                ^
+[error] /app/src/main/scala/smartagri/kalman/RobustnessExperiment.scala:153:84: value _2 is not a member of Seq[smartagri.kalman.RobustnessExperiment.SeriesResult]
+[error]           while (buffered.hasNext && buffered.head._1 == first._1 && buffered.head._2 == first._2 && buffered.head._3 == first._3)
+[error]                                                                                    ^
+[error] /app/src/main/scala/smartagri/kalman/RobustnessExperiment.scala:153:96: value _2 is not a member of Seq[smartagri.kalman.RobustnessExperiment.SeriesResult]
+[error]           while (buffered.hasNext && buffered.head._1 == first._1 && buffered.head._2 == first._2 && buffered.head._3 == first._3)
+[error]                                                                                                ^
+[error] /app/src/main/scala/smartagri/kalman/RobustnessExperiment.scala:153:116: value _3 is not a member of Seq[smartagri.kalman.RobustnessExperiment.SeriesResult]
+[error]           while (buffered.hasNext && buffered.head._1 == first._1 && buffered.head._2 == first._2 && buffered.head._3 == first._3)
+[error]                                                                                                                    ^
+[error] /app/src/main/scala/smartagri/kalman/RobustnessExperiment.scala:153:128: value _3 is not a member of Seq[smartagri.kalman.RobustnessExperiment.SeriesResult]
+[error]           while (buffered.hasNext && buffered.head._1 == first._1 && buffered.head._2 == first._2 && buffered.head._3 == first._3)
+[error]                                                                                                                                ^
+[error] /app/src/main/scala/smartagri/kalman/RobustnessExperiment.scala:155:34: value _5 is not a member of Seq[smartagri.kalman.RobustnessExperiment.SeriesResult]
+[error]           val clean = rows.map(_._5)
+[error]                                  ^
+[error] /app/src/main/scala/smartagri/kalman/RobustnessExperiment.scala:156:32: value _4 is not a member of Seq[smartagri.kalman.RobustnessExperiment.SeriesResult]
+[error]           val dts = rows.map(_._4).sliding(2).map(p => if (p.size < 2) 0 else KalmanFusionPipeline.daysBetween(p(0), p(1))).toSeq
+[error]                                ^
+[error] /app/src/main/scala/smartagri/kalman/RobustnessExperiment.scala:158:34: value _1 is not a member of Seq[smartagri.kalman.RobustnessExperiment.SeriesResult]
+[error]           val cellId = s"${first._1}-${first._2}-${first._3}".hashCode
+[error]                                  ^
+[error] /app/src/main/scala/smartagri/kalman/RobustnessExperiment.scala:158:46: value _2 is not a member of Seq[smartagri.kalman.RobustnessExperiment.SeriesResult]
+[error]           val cellId = s"${first._1}-${first._2}-${first._3}".hashCode
+[error]                                              ^
+[error] /app/src/main/scala/smartagri/kalman/RobustnessExperiment.scala:158:58: value _3 is not a member of Seq[smartagri.kalman.RobustnessExperiment.SeriesResult]
+[error]           val cellId = s"${first._1}-${first._2}-${first._3}".hashCode
+[error]                                                          ^
+[error] /app/src/main/scala/smartagri/kalman/RobustnessExperiment.scala:172:9: value flatten is not a member of Iterator[Seq[smartagri.kalman.RobustnessExperiment.SeriesResult]]
+[error] possible cause: maybe a semicolon is missing before `value flatten'?
+[error]       }.flatten
+[error]         ^
+[error] 22 errors found

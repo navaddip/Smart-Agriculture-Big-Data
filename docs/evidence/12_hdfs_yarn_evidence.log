@@ -1,0 +1,228 @@
+== cluster report (5 DataNodes) ==
+DFS Used%: 3.46%
+Live datanodes (5):
+Name: 172.19.0.10:9866 (datanode3.smartagri)
+DFS Used%: 2.97%
+Num of Blocks: 1521
+Name: 172.19.0.11:9866 (datanode2.smartagri)
+DFS Used%: 2.92%
+Num of Blocks: 1501
+Name: 172.19.0.12:9866 (datanode5.smartagri)
+DFS Used%: 2.79%
+Num of Blocks: 1530
+Name: 172.19.0.8:9866 (datanode1.smartagri)
+DFS Used%: 2.68%
+Num of Blocks: 1479
+Name: 172.19.0.9:9866 (datanode4.smartagri)
+DFS Used%: 2.95%
+Num of Blocks: 1514
+== topology ==
+Rack: /default-rack
+   172.19.0.10:9866 (datanode3.smartagri)
+   172.19.0.11:9866 (datanode2.smartagri)
+   172.19.0.12:9866 (datanode5.smartagri)
+   172.19.0.8:9866 (datanode1.smartagri)
+   172.19.0.9:9866 (datanode4.smartagri)
+
+== replication factor ==
+3
+== raw + processed zones ==
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20230413T050651_N0510_R019_T43PHQ_20240829T072229.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20230423T050651_N0510_R019_T43PGQ_20240830T140051 (1).zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20230423T050651_N0510_R019_T43PGQ_20240830T140051.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20231020T050831_N0510_R019_T43PHQ_20241106T203411.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240118T051131_N0510_R019_T43PGQ_20240118T081358.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240118T051131_N0510_R019_T43PHQ_20240118T081358.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240207T051001_N0510_R019_T43PGQ_20240207T085751.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240207T051001_N0510_R019_T43PHQ_20240207T085751.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240217T050901_N0510_R019_T43PHQ_20240217T091753.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240227T050751_N0510_R019_T43PGQ_20240227T085252.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240308T050651_N0510_R019_T43PGQ_20240308T084749.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240308T050651_N0510_R019_T43PHQ_20240308T084749.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240318T050651_N0510_R019_T43PGQ_20240318T084852.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240318T050651_N0510_R019_T43PHQ_20240318T084852.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240328T050651_N0510_R019_T43PGQ_20240328T085651.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240328T050651_N0510_R019_T43PHQ_20240328T085651.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240407T050651_N0510_R019_T43PGQ_20240407T085652.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240407T050651_N0510_R019_T43PHQ_20240407T085652.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240427T050651_N0510_R019_T43PGQ_20240427T095648.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2A_MSIL2A_20240427T050651_N0510_R019_T43PHQ_20240427T095648.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20230408T050659_N0510_R019_T43PGQ_20241011T212033.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20230408T050659_N0510_R019_T43PHQ_20241011T212033.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20230418T050659_N0510_R019_T43PGQ_20240905T094026.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20230418T050659_N0510_R019_T43PHQ_20240905T094026.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20230528T050659_N0510_R019_T43PGQ_20240907T232902.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20230528T050659_N0510_R019_T43PHQ_20240907T232902.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20231025T050859_N0510_R019_T43PGQ_20241102T215233.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240123T051119_N0510_R019_T43PGQ_20240123T073307.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240123T051119_N0510_R019_T43PHQ_20240123T073307.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240212T050939_N0510_R019_T43PHQ_20240212T074018.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240222T050829_N0510_R019_T43PGQ_20240222T074738.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240222T050829_N0510_R019_T43PHQ_20240222T074738.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240313T050649_N0510_R019_T43PGQ_20240313T145847.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240313T050649_N0510_R019_T43PHQ_20240313T145847.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240323T050649_N0510_R019_T43PGQ_20240323T082303.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240323T050649_N0510_R019_T43PHQ_20240323T082303.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240402T050649_N0510_R019_T43PGQ_20240402T073359.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240402T050649_N0510_R019_T43PHQ_20240402T073359.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240422T050649_N0510_R019_T43PHQ_20240422T081329.zip
+1.1 G    3.4 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240502T050649_N0510_R019_T43PGQ_20240502T075221.zip
+1.2 G    3.5 G    /user/smart_agri/raw/sentinel2/S2B_MSIL2A_20240601T050649_N0510_R019_T43PHQ_20240601T073715.zip
+890.1 K  2.6 M    /user/smart_agri/raw/era5/era5.zip
+670.9 K  2.0 M    /user/smart_agri/raw/soilgrids/Nirtogen.tif
+265.9 K  797.6 K  /user/smart_agri/raw/soilgrids/PH_WATER.tif
+723.6 K  2.1 M    /user/smart_agri/raw/soilgrids/Solid organic carbon.tif
+635.2 K  1.9 M    /user/smart_agri/raw/soilgrids/clay content.tif
+644.8 K  1.9 M    /user/smart_agri/raw/soilgrids/sand.tif
+626.4 K  1.8 M    /user/smart_agri/raw/soilgrids/slit.tif
+558.6 K  1.6 M    /user/smart_agri/raw/soilgrids/watevol content -33.tif
+19.5 K   58.4 K   /user/smart_agri/processed/_reports
+49.6 M   148.8 M  /user/smart_agri/processed/canonical_historical.parquet
+3.2 M    9.6 M    /user/smart_agri/processed/era5_weather.parquet
+16.2 M   48.6 M   /user/smart_agri/processed/mapreduce
+12.2 M   36.6 M   /user/smart_agri/processed/ml_features
+2.6 M    7.8 M    /user/smart_agri/processed/ml_features_eval
+15.0 M   45.0 M   /user/smart_agri/processed/sentinel2_ndvi.parquet
+950.3 K  2.8 M    /user/smart_agri/processed/soilgrids.parquet
+531      1.6 K    /user/smart_agri/results/conformal
+1.7 M    5.2 M    /user/smart_agri/results/decisions
+5.9 K    17.6 K   /user/smart_agri/results/kalman
+2.3 K    6.9 K    /user/smart_agri/results/ml
+839.2 K  2.5 M    /user/smart_agri/results/models
+819.9 K  2.4 M    /user/smart_agri/results/predictions
+216      648      /user/smart_agri/results/streaming
+709.0 K  2.1 M    /user/smart_agri/streaming/alerts
+711.1 K  2.1 M    /user/smart_agri/streaming/checkpoints
+3.6 M    10.8 M   /user/smart_agri/streaming/iot_filtered
+        none             inf            none             inf            4           49             47.0 G /user/smart_agri/raw
+        none             inf            none             inf           65        1.7 K             99.7 M /user/smart_agri/processed
+        none             inf            none             inf           31           46              3.3 M /user/smart_agri/results
+        none             inf            none             inf           22          327              5.0 M /user/smart_agri/streaming
+== fsck: block replication on raw + processed ==
+Connecting to namenode via http://namenode:9870/fsck?ugi=root&files=1&blocks=1&locations=1&path=%2Fuser%2Fsmart_agri%2Fraw
+Connecting to namenode via http://namenode:9870/fsck?ugi=root&files=1&blocks=1&locations=1&path=%2Fuser%2Fsmart_agri%2Fprocessed
+Connecting to namenode via http://namenode:9870/fsck?ugi=root&path=%2Fuser%2Fsmart_agri
+Status: HEALTHY
+ Number of data-nodes:	5
+ Total size:	50623414969 B
+ Total files:	2125
+ Total blocks (validated):	2456 (avg. block size 20612139 B)
+ Minimally replicated blocks:	2456 (100.0 %)
+ Under-replicated blocks:	0 (0.0 %)
+ Default replication factor:	3
+ Average block replication:	3.0
+ Total size:	0 B
+ Total files:	0
+== one raw Sentinel-2 file: blocks and the 3 DataNodes holding each ==
+Connecting to namenode via http://namenode:9870/fsck?ugi=root&files=1&blocks=1&locations=1&path=%2Fuser%2Fsmart_agri%2Fraw%2Fsentinel2%2FS2A_MSIL2A_20230413T050651_N0510_R019_T43PHQ_20240829T072229.zip
+0. BP-1675536552-172.19.0.5-1790521631704:blk_1073741833_1009 len=134217728 Live_repl=3  [DatanodeInfoWithStorage[172.19.0.8:9866,DS-c536dd25-8f7a-4cfb-9f18-2978a3ca2723,DISK], DatanodeInfoWithStorage[172.19.0.10:9866,DS-92826d5c-8c8b-4819-95ae-84e5356486b3,DISK], DatanodeInfoWithStorage[172.19.0.12:9866,DS-8067ded0-83f7-42b5-8ae6-a31a60cf316a,DISK]]
+1. BP-1675536552-172.19.0.5-1790521631704:blk_1073741834_1010 len=134217728 Live_repl=3  [DatanodeInfoWithStorage[172.19.0.11:9866,DS-e8e9276f-abfa-4496-bb5b-6bf65628b1bd,DISK], DatanodeInfoWithStorage[172.19.0.10:9866,DS-92826d5c-8c8b-4819-95ae-84e5356486b3,DISK], DatanodeInfoWithStorage[172.19.0.12:9866,DS-8067ded0-83f7-42b5-8ae6-a31a60cf316a,DISK]]
+2. BP-1675536552-172.19.0.5-1790521631704:blk_1073741835_1011 len=134217728 Live_repl=3  [DatanodeInfoWithStorage[172.19.0.10:9866,DS-92826d5c-8c8b-4819-95ae-84e5356486b3,DISK], DatanodeInfoWithStorage[172.19.0.9:9866,DS-ba87039e-392b-48e6-813a-f988e576bc0b,DISK], DatanodeInfoWithStorage[172.19.0.11:9866,DS-e8e9276f-abfa-4496-bb5b-6bf65628b1bd,DISK]]
+3. BP-1675536552-172.19.0.5-1790521631704:blk_1073741836_1012 len=134217728 Live_repl=3  [DatanodeInfoWithStorage[172.19.0.11:9866,DS-e8e9276f-abfa-4496-bb5b-6bf65628b1bd,DISK], DatanodeInfoWithStorage[172.19.0.10:9866,DS-92826d5c-8c8b-4819-95ae-84e5356486b3,DISK], DatanodeInfoWithStorage[172.19.0.12:9866,DS-8067ded0-83f7-42b5-8ae6-a31a60cf316a,DISK]]
+4. BP-1675536552-172.19.0.5-1790521631704:blk_1073741837_1013 len=134217728 Live_repl=3  [DatanodeInfoWithStorage[172.19.0.12:9866,DS-8067ded0-83f7-42b5-8ae6-a31a60cf316a,DISK], DatanodeInfoWithStorage[172.19.0.8:9866,DS-c536dd25-8f7a-4cfb-9f18-2978a3ca2723,DISK], DatanodeInfoWithStorage[172.19.0.9:9866,DS-ba87039e-392b-48e6-813a-f988e576bc0b,DISK]]
+5. BP-1675536552-172.19.0.5-1790521631704:blk_1073741838_1014 len=134217728 Live_repl=3  [DatanodeInfoWithStorage[172.19.0.9:9866,DS-ba87039e-392b-48e6-813a-f988e576bc0b,DISK], DatanodeInfoWithStorage[172.19.0.8:9866,DS-c536dd25-8f7a-4cfb-9f18-2978a3ca2723,DISK], DatanodeInfoWithStorage[172.19.0.12:9866,DS-8067ded0-83f7-42b5-8ae6-a31a60cf316a,DISK]]
+6. BP-1675536552-172.19.0.5-1790521631704:blk_1073741839_1015 len=134217728 Live_repl=3  [DatanodeInfoWithStorage[172.19.0.11:9866,DS-e8e9276f-abfa-4496-bb5b-6bf65628b1bd,DISK], DatanodeInfoWithStorage[172.19.0.9:9866,DS-ba87039e-392b-48e6-813a-f988e576bc0b,DISK], DatanodeInfoWithStorage[172.19.0.8:9866,DS-c536dd25-8f7a-4cfb-9f18-2978a3ca2723,DISK]]
+7. BP-1675536552-172.19.0.5-1790521631704:blk_1073741840_1016 len=134217728 Live_repl=3  [DatanodeInfoWithStorage[172.19.0.10:9866,DS-92826d5c-8c8b-4819-95ae-84e5356486b3,DISK], DatanodeInfoWithStorage[172.19.0.12:9866,DS-8067ded0-83f7-42b5-8ae6-a31a60cf316a,DISK], DatanodeInfoWithStorage[172.19.0.9:9866,DS-ba87039e-392b-48e6-813a-f988e576bc0b,DISK]]
+8. BP-1675536552-172.19.0.5-1790521631704:blk_1073741841_1017 len=134217728 Live_repl=3  [DatanodeInfoWithStorage[172.19.0.9:9866,DS-ba87039e-392b-48e6-813a-f988e576bc0b,DISK], DatanodeInfoWithStorage[172.19.0.8:9866,DS-c536dd25-8f7a-4cfb-9f18-2978a3ca2723,DISK], DatanodeInfoWithStorage[172.19.0.11:9866,DS-e8e9276f-abfa-4496-bb5b-6bf65628b1bd,DISK]]
+9. BP-1675536552-172.19.0.5-1790521631704:blk_1073741842_1018 len=14886167 Live_repl=3  [DatanodeInfoWithStorage[172.19.0.8:9866,DS-c536dd25-8f7a-4cfb-9f18-2978a3ca2723,DISK], DatanodeInfoWithStorage[172.19.0.12:9866,DS-8067ded0-83f7-42b5-8ae6-a31a60cf316a,DISK], DatanodeInfoWithStorage[172.19.0.9:9866,DS-ba87039e-392b-48e6-813a-f988e576bc0b,DISK]]
+ Total dirs:			0
+ Total symlinks:		0
+ Total size:	1222845719 B
+ Total files:	1
+== YARN applications (Spark + MapReduce jobs that ran on the cluster) ==
+Total number of applications (application-types: [], states: [NEW, NEW_SAVING, SUBMITTED, ACCEPTED, RUNNING, FINISHED, FAILED, KILLED] and tags: []):17
+                Application-Id	    Application-Name	    Application-Type	      User	     Queue	             State	       Final-State	       Progress	                       Tracking-URL
+application_1790521642675_0008	      Era5Preprocess	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0009	 SoilGridsPreprocess	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0010	CanonicalHistoricalDatasetBuilder	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0011	NdviFlatInputPreparation	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0012	NdviTileMonthAggregation	           MAPREDUCE	      root	   default	          FINISHED	         SUCCEEDED	           100%	http://nodemanager1:19888/jobhistory/job/job_1790521642675_0012
+application_1790521642675_0013	FeaturePipelineBuilder	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0014	KalmanRobustnessExperiment	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0015	CropStressTrainEvaluate	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0001	 Sentinel2Preprocess	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0002	      Era5Preprocess	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0003	 SoilGridsPreprocess	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0004	 SoilGridsPreprocess	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0005	 CropHealthStreaming	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0006	 CropHealthStreaming	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0007	 Sentinel2Preprocess	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0016	 CropHealthStreaming	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+application_1790521642675_0017	StreamingDetectionEvaluation	               SPARK	      root	   default	          FINISHED	         SUCCEEDED	           100%	                                N/A
+== Kafka topics ==
+Topic: iot_sensor_readings	TopicId: BIfJUBMhTVqyc-W9pZtbOA	PartitionCount: 6	ReplicationFactor: 1	Configs: 
+	Topic: iot_sensor_readings	Partition: 0	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: iot_sensor_readings	Partition: 1	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: iot_sensor_readings	Partition: 2	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: iot_sensor_readings	Partition: 3	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: iot_sensor_readings	Partition: 4	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: iot_sensor_readings	Partition: 5	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+Topic: __consumer_offsets	TopicId: k7bIBxJgRs-4JAtPQ9UDWA	PartitionCount: 50	ReplicationFactor: 1	Configs: compression.type=producer,cleanup.policy=compact,segment.bytes=104857600
+	Topic: __consumer_offsets	Partition: 0	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 1	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 2	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 3	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 4	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 5	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 6	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 7	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 8	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 9	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 10	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 11	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 12	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 13	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 14	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 15	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 16	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 17	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 18	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 19	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 20	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 21	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 22	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 23	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 24	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 25	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 26	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 27	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 28	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 29	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 30	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 31	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 32	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 33	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 34	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 35	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 36	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 37	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 38	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 39	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 40	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 41	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 42	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 43	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 44	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 45	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 46	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 47	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 48	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: __consumer_offsets	Partition: 49	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+Topic: crop_alerts	TopicId: z5xHr_jcS0iDRzHal5GFiQ	PartitionCount: 3	ReplicationFactor: 1	Configs: 
+	Topic: crop_alerts	Partition: 0	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: crop_alerts	Partition: 1	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: crop_alerts	Partition: 2	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+NAMES             IMAGE                                                    STATUS
+spark-client      apache/spark:3.5.6                                       Up 34 minutes
+nodemanager1      bde2020/hadoop-nodemanager:2.0.0-hadoop3.2.1-java8       Up About an hour (healthy)
+nodemanager2      bde2020/hadoop-nodemanager:2.0.0-hadoop3.2.1-java8       Up About an hour (healthy)
+datanode2         bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8          Up About an hour (healthy)
+datanode4         bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8          Up About an hour (healthy)
+datanode3         bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8          Up About an hour (healthy)
+datanode5         bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8          Up About an hour (healthy)
+datanode1         bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8          Up About an hour (healthy)
+kafka             apache/kafka:3.8.0                                       Up About an hour
+resourcemanager   bde2020/hadoop-resourcemanager:2.0.0-hadoop3.2.1-java8   Up About an hour (healthy)
+namenode          bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8          Up About an hour (healthy)
+historyserver     bde2020/hadoop-historyserver:2.0.0-hadoop3.2.1-java8     Up About an hour (healthy)
+evidence written to docs/evidence/hdfs_yarn/

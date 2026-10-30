@@ -1,0 +1,7 @@
+Rack: /default-rack
+   172.19.0.10:9866 (datanode3.smartagri)
+   172.19.0.11:9866 (datanode2.smartagri)
+   172.19.0.12:9866 (datanode5.smartagri)
+   172.19.0.8:9866 (datanode1.smartagri)
+   172.19.0.9:9866 (datanode4.smartagri)
+

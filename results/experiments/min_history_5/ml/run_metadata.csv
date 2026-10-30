@@ -1,0 +1,16 @@
+key,value
+seed,42
+num_trees,100
+max_depth,8
+fit_rows,145859
+calibration_rows,59393
+test_rows,48763
+calibration_cutoff,2024-03-18
+rows_dropped_null_feature,0
+feature_count,19
+primary_model,random_forest_enhanced
+primary_hyperparameters,see num_trees/max_depth
+constant_columns_dropped,swvl1|u10|v10|t2m|d2m|ssrd|e|tp|pev
+model_selection_validation_date,2024-03-13
+model_path,hdfs://namenode:9000/user/smart_agri/results/models/crop_stress_rf_min_history_5
+scale_note,full dataset -- every eligible cell/date from the HDFS feature table

@@ -1,0 +1,2 @@
+first_date,last_date,days_expected,daily_rows,grid_points,total_missing_point_days
+2023-01-01,2023-12-31,365,29565,81,0

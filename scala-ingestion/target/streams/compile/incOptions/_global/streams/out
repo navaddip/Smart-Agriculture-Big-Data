@@ -1,0 +1,44 @@
+[debug] Created transactional ClassFileManager with tempDir = /app/target/scala-2.12/classes.bak
+[debug] About to delete class files:
+[debug] 	TrainEvaluateJob$$anonfun$1.class
+[debug] 	TrainEvaluateJob$$typecreator36$1.class
+[debug] 	TrainEvaluateJob$$typecreator76$1.class
+[debug] 	TrainEvaluateJob$$typecreator10$1.class
+[debug] 	TrainEvaluateJob$$typecreator15$1.class
+[debug] 	TrainEvaluateJob$$typecreator71$1.class
+[debug] 	TrainEvaluateJob$.class
+[debug] 	TrainEvaluateJob.class
+[debug] 	TrainEvaluateJob$$typecreator56$1.class
+[debug] 	TrainEvaluateJob$$typecreator46$1.class
+[debug] 	TrainEvaluateJob$$typecreator77$1.class
+[debug] 	TrainEvaluateJob$$typecreator26$1.class
+[debug] 	TrainEvaluateJob$$typecreator61$1.class
+[debug] We backup class files:
+[debug] 	TrainEvaluateJob$$anonfun$1.class
+[debug] 	TrainEvaluateJob$$typecreator36$1.class
+[debug] 	TrainEvaluateJob$$typecreator76$1.class
+[debug] 	TrainEvaluateJob$$typecreator10$1.class
+[debug] 	TrainEvaluateJob$$typecreator15$1.class
+[debug] 	TrainEvaluateJob$$typecreator71$1.class
+[debug] 	TrainEvaluateJob$.class
+[debug] 	TrainEvaluateJob.class
+[debug] 	TrainEvaluateJob$$typecreator56$1.class
+[debug] 	TrainEvaluateJob$$typecreator46$1.class
+[debug] 	TrainEvaluateJob$$typecreator77$1.class
+[debug] 	TrainEvaluateJob$$typecreator26$1.class
+[debug] 	TrainEvaluateJob$$typecreator61$1.class
+[debug] Registering generated classes:
+[debug] 	TrainEvaluateJob$$anonfun$1.class
+[debug] 	TrainEvaluateJob$$typecreator36$1.class
+[debug] 	TrainEvaluateJob$$typecreator76$1.class
+[debug] 	TrainEvaluateJob$$typecreator10$1.class
+[debug] 	TrainEvaluateJob$$typecreator15$1.class
+[debug] 	TrainEvaluateJob$$typecreator71$1.class
+[debug] 	TrainEvaluateJob$.class
+[debug] 	TrainEvaluateJob.class
+[debug] 	TrainEvaluateJob$$typecreator56$1.class
+[debug] 	TrainEvaluateJob$$typecreator46$1.class
+[debug] 	TrainEvaluateJob$$typecreator77$1.class
+[debug] 	TrainEvaluateJob$$typecreator26$1.class
+[debug] 	TrainEvaluateJob$$typecreator61$1.class
+[debug] Removing the temporary directory used for backing up class files: /app/target/scala-2.12/classes.bak
